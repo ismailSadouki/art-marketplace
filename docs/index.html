@@ -1,0 +1,2290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT Marketplace</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- =========== ==============-->
+    <meta name="description" content="ART marketplace" />
+    <meta name="keywords" content="art, music , images" />
+    <meta name="author" content="John Doe" />
+  </head>
+  <body>
+    <!-- ============= HEADER ========== -->
+    <header class="bg-zinc-800">
+      <nav
+        class="flex py-5 my-0 mx-auto px-3 md:px-[50px] justify-between items-center max-w-[1366px] relative"
+      >
+        <a
+          href="/"
+          aria-label="home page"
+          class="w-[243.414px] h-[32px] flex justify-center items-center gap-2.5 shrink-0"
+        >
+          <img alt="" src="./img/logo_img.svg" class="w-[32px] h-[32px]" />
+          <img alt="" src="./img/logo_txt.svg" class="w-full h-[21px]" />
+        </a>
+
+        <div
+          id="open-nav"
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+          onclick="toggleNav(event, 'show')"
+          onKeyDown="toggleNav(event, 'show') "
+          class="flex lg:hidden flex-col gap-1.5 justify-center items-start w-6 h-6 transition-all duration-300"
+        >
+          <span class="w-9/12 h-0.5 bg-white rounded-20"></span>
+          <span class="w-full h-0.5 bg-white rounded-20"></span>
+          <span class="w-9/12 h-0.5 bg-white rounded-20"></span>
+        </div>
+
+        <div
+          id="close-nav"
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+          onclick="toggleNav(event, 'close')"
+          onKeyDown="toggleNav(event, 'close') "
+          class="hidden lg:hidden flex-col gap-1.5 justify-center relative items-start w-6 h-6 transition-all duration-300"
+        >
+          <span
+            class="w-full h-0.5 bg-white rounded-20 absolute rotate-45"
+          ></span>
+          <span
+            class="w-full h-0.5 bg-white rounded-20 absolute -rotate-45"
+          ></span>
+        </div>
+        <ul
+          id="nav-menu"
+          class="absolute bg-neutral-900 items-start justify-start flex-col top-[62px] left-[-200vh] md:pl-[45px] h-[217px] transition-all duration-300 flex lg:justify-end lg:items-center lg:gap-2.5 lg:bg-transparent lg:static lg:flex-row lg:h-auto lg:pl-0"
+        >
+          <li
+            class="flex h-[46px] w-screen lg:w-auto py-0 px-5 justify-start lg:justify-center gap-3 rounded-20 items-center"
+          >
+            <a
+              href="marketplace.html"
+              class="text-center text-base font-work font-semibold leading-140 text-white"
+            >
+              Marketplace
+            </a>
+          </li>
+
+          <li
+            class="flex h-[46px] py-0 px-5 justify-center gap-3 rounded-20 items-center"
+          >
+            <a
+              href="rankings.html"
+              class="text-center text-base font-work font-semibold leading-140 text-white"
+            >
+              Rankings
+            </a>
+          </li>
+          <li
+            class="flex h-[46px] py-0 px-5 justify-center gap-3 rounded-20 items-center"
+          >
+            <a
+              href="wallet.html"
+              class="text-center text-base font-work font-semibold leading-140 text-white"
+            >
+              Connect a wallet
+            </a>
+          </li>
+          <li
+            class="flex h-[46px] mt-2.5 lg:py-0 px-5 justify-center gap-3 rounded-20 items-center"
+          >
+            <a
+              href="login.html"
+              class="flex px-[30px] justify-center items-center gap-3 rounded-20 bg-purple-550 h-[60px] w-full scale-animation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10 3.125C7.58375 3.125 5.625 5.08375 5.625 7.5C5.625 9.91625 7.58375 11.875 10 11.875C12.4162 11.875 14.375 9.91625 14.375 7.5C14.375 5.08375 12.4162 3.125 10 3.125ZM4.375 7.5C4.375 4.3934 6.8934 1.875 10 1.875C13.1066 1.875 15.625 4.3934 15.625 7.5C15.625 10.6066 13.1066 13.125 10 13.125C6.8934 13.125 4.375 10.6066 4.375 7.5Z"
+                  fill="white"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.0001 13.124C8.57374 13.124 7.17251 13.4995 5.93728 14.2128C4.70205 14.926 3.67634 15.9518 2.96327 17.1872C2.79071 17.4861 2.40848 17.5886 2.10953 17.416C1.81058 17.2435 1.70812 16.8612 1.88068 16.5623C2.70345 15.1369 3.88696 13.9532 5.31223 13.1303C6.7375 12.3073 8.3543 11.874 10.0001 11.874C11.6459 11.874 13.2627 12.3073 14.688 13.1303C16.1132 13.9532 17.2968 15.1369 18.1195 16.5623C18.2921 16.8612 18.1896 17.2435 17.8907 17.416C17.5917 17.5886 17.2095 17.4861 17.0369 17.1872C16.3239 15.9518 15.2982 14.926 14.0629 14.2128C12.8277 13.4995 11.4265 13.124 10.0001 13.124Z"
+                  fill="white"
+                />
+              </svg>
+              <span
+                class="text-center font-work font-base font-semibold leading-140 text-white"
+                >Sign Up</span
+              >
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--================== MAIN================ -->
+    <main class="w-full h-full bg-zinc-800 text-white">
+      <!-- ============ HOME ================= -->
+      <section
+        id="hero"
+        class="py-10 flex justify-center items-center gap-7 md:py-20 lg:px-[195px]"
+      >
+        <div
+          class="flex flex-col items-start gap-10 w-[315px] md:flex-row md:w-[690px] lg:w-[1050px] lg:min-w-[1050px] md:gap-5 md:grid md:grid-cols-[1fr_1fr] md:grid-rows-[242px_60px_57px] lg:gap-[30px] lg:grid-rows-[327px_60px_57px]"
+        >
+          <div class="flex items-start flex-col gap-2.5">
+            <h2
+              class="font-semibold font-work text-[1.75rem] leading-110 capitalize md:text-[2.375rem] lg:text-[67px]"
+            >
+              Discover digital art & Collect NFTs
+            </h2>
+            <p
+              class="font-work leading-140 text-base capitalize font-normal lg:text-h2 lg:leading-160"
+            >
+              NFT marketplace UI created with Anima for Figma. Collect, buy and
+              sell art from more than 20k NFT artists.
+            </p>
+          </div>
+
+          <a
+            href="artist.html"
+            class="flex flex-col justify-end h-[315px] w-full rounded-20 overflow-hidden md:h-[20.625rem] lg:h-[510px] scale-animation"
+          >
+            <div class="w-full h-full">
+              <img
+                class="rounded-t-[20px] w-full h-full"
+                alt="image"
+                src="./img/bg.webp"
+              />
+            </div>
+            <div
+              class="p-5 gap-2.5 flex flex-col justify-center h-[109px] shrink-0 bg-secondary"
+            >
+              <h2
+                class="font-work text-h2 font-semibold leading-140 capitalize"
+              >
+                Space Walking
+              </h2>
+              <div class="flex items-start gap-3 w-full">
+                <div
+                  class="flex justify-center items-center shrink-0 w-6 h-6 rounded-[7.5rem]"
+                >
+                  <img
+                    class="w-6 h-6 rounded-[7.5rem]"
+                    alt="avatar 1"
+                    src="./img/avatar-5.webp"
+                  />
+                </div>
+                <h3 class="font-work text-base font-normal leading-140">
+                  IsmailSad
+                </h3>
+              </div>
+            </div>
+          </a>
+
+          <button
+            class="flex px-[3.125rem] justify-center items-center gap-3 rounded-[1.25rem] bg-purple-550 h-[3.75rem] w-full md:w-56 scale-animation"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 21 20"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.67053 12.4494C6.78055 12.7766 6.60451 13.131 6.27734 13.241C5.21792 13.5973 4.65489 14.4866 4.35373 15.391C4.23414 15.7501 4.16189 16.0958 4.11848 16.3817C4.40434 16.3383 4.75006 16.266 5.10917 16.1464C6.01355 15.8453 6.9029 15.2823 7.25916 14.2228C7.36918 13.8957 7.7236 13.7196 8.05078 13.8296C8.37795 13.9397 8.55399 14.2941 8.44396 14.6213C7.9096 16.2103 6.58801 16.9715 5.50411 17.3324C4.95655 17.5148 4.44395 17.6048 4.0698 17.6497C3.88182 17.6722 3.72641 17.6836 3.616 17.6894C3.56074 17.6924 3.51658 17.6939 3.48505 17.6946C3.46928 17.695 3.45666 17.6952 3.44737 17.6954L3.43596 17.6955L3.43217 17.6955L3.43077 17.6955L3.43019 17.6955C3.42993 17.6955 3.42969 17.6955 3.42969 17.0705C2.80469 17.0705 2.80469 17.0702 2.80469 17.07L2.80469 17.0694L2.80469 17.068L2.80471 17.0642L2.80481 17.0528C2.80493 17.0435 2.80514 17.0309 2.80553 17.0151C2.80631 16.9836 2.80782 16.9394 2.81072 16.8842C2.81653 16.7738 2.82797 16.6184 2.85052 16.4304C2.8954 16.0562 2.98542 15.5436 3.16776 14.9961C3.5287 13.9122 4.28989 12.5906 5.87891 12.0562C6.20608 11.9462 6.5605 12.1222 6.67053 12.4494ZM3.42969 17.0705H2.80469C2.80469 17.4157 3.08451 17.6955 3.42969 17.6955V17.0705Z"
+                fill="white"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M17.0462 3.45406C16.3208 3.34943 14.5351 3.31002 12.7076 5.13753L7.84482 10.0003L10.5 12.6555L15.3627 7.79271C17.1903 5.9652 17.1508 4.17951 17.0462 3.45406ZM17.2275 2.21727C16.2298 2.07282 14.0058 2.07157 11.8237 4.25365L6.519 9.55834C6.40179 9.67555 6.33594 9.83452 6.33594 10.0003C6.33594 10.166 6.40179 10.325 6.519 10.4422L10.0581 13.9813C10.3021 14.2254 10.6979 14.2254 10.9419 13.9813L16.2466 8.67659C18.4287 6.49452 18.4275 4.27052 18.283 3.27282C18.2465 3.0058 18.1235 2.75803 17.9329 2.5674C17.7422 2.37678 17.4945 2.25382 17.2275 2.21727Z"
+                fill="white"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.922 8.49219C15.2672 8.49219 15.547 8.77201 15.547 9.11719V14.1641L15.5469 14.173C15.5423 14.5013 15.4086 14.8145 15.175 15.045L12.6527 17.575C12.4926 17.7349 12.2921 17.8484 12.0725 17.9033C11.853 17.9582 11.6227 17.9524 11.4061 17.8867C11.1896 17.8209 10.995 17.6976 10.843 17.5299C10.6912 17.3623 10.5877 17.1567 10.5435 16.9349C10.5434 16.9347 10.5435 16.9351 10.5435 16.9349L9.88731 13.6619C9.81946 13.3235 10.0388 12.9941 10.3773 12.9263C10.7157 12.8584 11.0451 13.0778 11.1129 13.4162L11.7694 16.6906L14.297 14.1552V9.11719C14.297 8.77201 14.5768 8.49219 14.922 8.49219Z"
+                fill="white"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.32625 4.95319L6.33515 4.95312H11.382C11.7272 4.95312 12.007 5.23295 12.007 5.57812C12.007 5.9233 11.7272 6.20312 11.382 6.20312H6.34399L6.33894 6.20828L6.33891 6.20825L3.80859 8.73075L3.80956 8.73094L7.083 9.38719C7.42144 9.45504 7.6408 9.78441 7.57295 10.1229C7.5051 10.4613 7.17574 10.6807 6.83729 10.6128L3.56483 9.95675C3.56464 9.95671 3.56445 9.95668 3.56426 9.95664C3.34252 9.91244 3.1369 9.80892 2.96933 9.65711C2.80162 9.50516 2.6783 9.31054 2.61254 9.094C2.54677 8.87746 2.54103 8.64712 2.59592 8.42757C2.65081 8.20802 2.76427 8.00749 2.9242 7.84738L2.92514 7.84644L2.92514 7.84644L5.45424 5.32514C5.68475 5.09151 5.99796 4.95786 6.32625 4.95319Z"
+                fill="white"
+              />
+            </svg>
+            <span
+              class="text-center font-work font-base font-semibold leading-140"
+              >Get Started</span
+            >
+          </button>
+          <div class="flex flex-row gap-[1.875rem] md:col-start-1">
+            <div>
+              <h4 class="font-space text-h2 font-bold leading-160 capitalize">
+                240k+
+              </h4>
+              <p class="font-work text-base font-normal leading-140">
+                Total Sale
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-space text-h2 font-bold leading-160 capitalize">
+                100k+
+              </h4>
+              <p class="font-work text-base font-normal leading-140">
+                Auctions
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-space text-h2 font-bold leading-160 capitalize">
+                240k+
+              </h4>
+              <p class="font-work text-base font-normal leading-140">Artists</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TRENDING ================= -->
+      <section
+        id="trending"
+        class="py-10 flex justify-center items-center gap-7 md:py-20 lg:px-[195px]"
+      >
+        <div
+          class="flex flex-col items-start gap-[39px] w-[315px] md:w-[690px] lg:w-[1050px] lg:min-w-[1050px]"
+        >
+          <div>
+            <h2 class="font-work text-h1 font-semibold leading-140 capitalize">
+              Trending Collection
+            </h2>
+            <p class="font-work text-base font-normal leading-140">
+              Checkout our weekly updated trending collection.
+            </p>
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-[30px] w-full">
+            <!-- ===== CARD ====== -->
+            <div class="flex flex-col items-start gap-[15px] md:w-[330px]">
+              <a
+                href="nft.html"
+                class="h-[315px] rounded-20 w-full md:h-[330px] scale-animation"
+                aria-label="trend 1"
+              >
+                <img class="w-full h-full" alt="" src="./img/trend-1.webp" />
+              </a>
+
+              <div class="flex items-start gap-[15px] w-full">
+                <a
+                  href="nft.html"
+                  class="h-[95px] rw-[95px] ounded-[20px] flex-none md:h-[100px] md:w-[100px] scale-animation"
+                  aria-label="trend 1.2"
+                >
+                  <img
+                    class="w-full h-full"
+                    alt=""
+                    src="./img/trend-1_1.webp"
+                  />
+                </a>
+
+                <a
+                  class="h-[95px] rw-[95px] ounded-[20px] flex-none md:h-[100px] md:w-[100px] scale-animation"
+                  href="nft.html"
+                  aria-label="trend 1.3"
+                >
+                  <img
+                    class="w-full h-full"
+                    alt=""
+                    src="./img/trend-1_2.webp"
+                  />
+                </a>
+                <a
+                  class="text-center font-space text-normal font-bold leading-140 flex w-[95px] h-[95px] py-8 px-[15px] flex-col justify-center items-center gap-2.5 rounded-20 bg-purple-550 flex-none md:h-[100px] md:w-[100px] scale-animation"
+                  href="nft.html"
+                  aria-label="other trends"
+                >
+                  1025+
+                </a>
+              </div>
+
+              <div class="flex flex-col items-start gap-2.5">
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  DSGN Animals
+                </h3>
+                <div class="flex items-start gap-3 w-full">
+                  <div
+                    class="flex justify-center items-center shrink-0 w-6 h-6 rounded-[7.5rem]"
+                  >
+                    <img
+                      class="w-6 h-6 rounded-[7.5rem]"
+                      alt="avatar 2"
+                      src="./img/avatar-10.webp"
+                    />
+                  </div>
+                  <h3 class="font-work text-base font-normal leading-140">
+                    IsmailSad
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- ===== CARD ====== -->
+            <div
+              class="flex-col items-start gap-[15px] md:w-[330px] hidden md:flex"
+            >
+              <a
+                href="nft.html"
+                class="h-[315px] rounded-20 w-full md:h-[330px] scale-animation"
+                aria-label="trend 1"
+              >
+                <img class="w-full h-full" alt="" src="./img/trend-2.webp" />
+              </a>
+
+              <div class="flex items-start gap-[15px] w-full">
+                <a
+                  href="nft.html"
+                  class="h-[95px] rw-[95px] ounded-[20px] flex-none md:h-[100px] md:w-[100px] scale-animation"
+                  aria-label="trend 1.2"
+                >
+                  <img
+                    class="w-full h-full"
+                    alt=""
+                    src="./img/trend-2_1.webp"
+                  />
+                </a>
+
+                <a
+                  class="h-[95px] rw-[95px] ounded-[20px] flex-none md:h-[100px] md:w-[100px] scale-animation"
+                  href="nft.html"
+                  aria-label="trend 1.3"
+                >
+                  <img
+                    class="w-full h-full"
+                    alt=""
+                    src="./img/trend-2_2.webp"
+                  />
+                </a>
+                <a
+                  class="text-center font-space text-normal font-bold leading-140 flex w-[95px] h-[95px] py-8 px-[15px] flex-col justify-center items-center gap-2.5 rounded-20 bg-purple-550 flex-none md:h-[100px] md:w-[100px] scale-animation"
+                  href="nft.html"
+                  aria-label="other trends"
+                >
+                  6+
+                </a>
+              </div>
+
+              <div class="flex flex-col items-start gap-2.5">
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  Magic Mushrooms
+                </h3>
+                <div class="flex items-start gap-3 w-full">
+                  <div
+                    class="flex justify-center items-center shrink-0 w-6 h-6 rounded-[7.5rem]"
+                  >
+                    <img
+                      class="w-6 h-6 rounded-[7.5rem]"
+                      alt="avatar 3"
+                      src="./img/avatar-3.webp"
+                    />
+                  </div>
+                  <h3 class="font-work text-base font-normal leading-140">
+                    IsmailSad
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- ===== CARD ====== -->
+            <div
+              class="flex-col items-start gap-[15px] md:w-[330px] hidden lg:flex"
+            >
+              <a
+                href="nft.html"
+                class="h-[315px] rounded-20 w-full md:h-[330px] scale-animation"
+                aria-label="trend 1"
+              >
+                <img class="w-full h-full" alt="" src="./img/trend-3.webp" />
+              </a>
+
+              <div class="flex items-start gap-[15px] w-full">
+                <a
+                  href="nft.html"
+                  class="h-[95px] rw-[95px] ounded-[20px] flex-none md:h-[100px] md:w-[100px] scale-animation"
+                  aria-label="trend 1.2"
+                >
+                  <img
+                    class="w-full h-full"
+                    alt=""
+                    src="./img/trend-3_1.webp"
+                  />
+                </a>
+
+                <a
+                  class="h-[95px] rw-[95px] ounded-[20px] flex-none md:h-[100px] md:w-[100px] scale-animation"
+                  href="nft.html"
+                  aria-label="trend 1.3"
+                >
+                  <img
+                    class="w-full h-full"
+                    alt=""
+                    src="./img/trend-3_2.webp"
+                  />
+                </a>
+                <a
+                  class="text-center font-space text-normal font-bold leading-140 flex w-[95px] h-[95px] py-8 px-[15px] flex-col justify-center items-center gap-2.5 rounded-20 bg-purple-550 flex-none md:h-[100px] md:w-[100px] scale-animation"
+                  href="nft.html"
+                  aria-label="other trends"
+                >
+                  1025+
+                </a>
+              </div>
+
+              <div class="flex flex-col items-start gap-2.5">
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  Disco Machines
+                </h3>
+                <div class="flex items-start gap-3 w-full">
+                  <div
+                    class="flex justify-center items-center shrink-0 w-6 h-6 rounded-[7.5rem]"
+                  >
+                    <img
+                      class="w-6 h-6 rounded-[7.5rem]"
+                      alt="avatar 4"
+                      src="./img/avatar-13.webp"
+                    />
+                  </div>
+                  <h3 class="font-work text-base font-normal leading-140">
+                    IsmailSad
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============== END TREANDING ==========-->
+
+      <!-- ============ TOP CREATOR ================= -->
+      <section
+        id="top"
+        class="py-10 flex justify-center items-center gap-7 md:py-20 lg:px-[195px]"
+      >
+        <div
+          class="flex flex-col items-start gap-[40px] lg:gap-[60px] w-[315px] md:w-[690px] lg:w-[1050px] lg:min-w-[1050px]"
+        >
+          <div class="flex w-full md:gap-[100px] md:justify-between">
+            <div class="w-full">
+              <h2
+                class="font-work text-h1 font-semibold leading-140 capitalize"
+              >
+                Top creators
+              </h2>
+              <p class="font-work text-base font-normal leading-140">
+                Checkout our weekly updated trending collection.
+              </p>
+            </div>
+            <button
+              class="hidden md:flex px-[3.125rem] justify-center items-center gap-3 rounded-[1.25rem] border-2 border-purple-550 h-[3.75rem] w-full md:max-w-[247px] md:self-end scale-animation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M6.17053 12.4494C6.28055 12.7766 6.10451 13.131 5.77734 13.241C4.71792 13.5973 4.15489 14.4866 3.85373 15.391C3.73414 15.7501 3.66189 16.0958 3.61848 16.3817C3.90434 16.3383 4.25006 16.266 4.60917 16.1464C5.51355 15.8453 6.4029 15.2823 6.75916 14.2228C6.86918 13.8957 7.2236 13.7196 7.55078 13.8296C7.87795 13.9397 8.05399 14.2941 7.94396 14.6213C7.4096 16.2103 6.08801 16.9715 5.00411 17.3324C4.45655 17.5148 3.94395 17.6048 3.5698 17.6497C3.38182 17.6722 3.22641 17.6836 3.116 17.6894C3.06074 17.6924 3.01658 17.6939 2.98505 17.6946C2.96928 17.695 2.95666 17.6952 2.94737 17.6954L2.93596 17.6955L2.93217 17.6955L2.93077 17.6955L2.93019 17.6955C2.92993 17.6955 2.92969 17.6955 2.92969 17.0705C2.30469 17.0705 2.30469 17.0702 2.30469 17.07L2.30469 17.0694L2.30469 17.068L2.30471 17.0642L2.30481 17.0528C2.30493 17.0435 2.30514 17.0309 2.30553 17.0151C2.30631 16.9836 2.30782 16.9394 2.31072 16.8842C2.31653 16.7738 2.32797 16.6184 2.35052 16.4304C2.3954 16.0562 2.48542 15.5436 2.66776 14.9961C3.0287 13.9122 3.78989 12.5906 5.37891 12.0562C5.70608 11.9462 6.0605 12.1222 6.17053 12.4494ZM2.92969 17.0705H2.30469C2.30469 17.4157 2.58451 17.6955 2.92969 17.6955V17.0705Z"
+                  fill="#A259FF"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16.5462 3.45406C15.8208 3.34943 14.0351 3.31002 12.2076 5.13753L7.34482 10.0003L10 12.6555L14.8627 7.79271C16.6903 5.9652 16.6508 4.17951 16.5462 3.45406ZM16.7275 2.21727C15.7298 2.07282 13.5058 2.07157 11.3237 4.25365L6.019 9.55834C5.90179 9.67555 5.83594 9.83452 5.83594 10.0003C5.83594 10.166 5.90179 10.325 6.019 10.4422L9.55806 13.9813C9.80214 14.2254 10.1979 14.2254 10.4419 13.9813L15.7466 8.67659C17.9287 6.49452 17.9275 4.27052 17.783 3.27282C17.7465 3.0058 17.6235 2.75803 17.4329 2.5674C17.2422 2.37678 16.9945 2.25382 16.7275 2.21727Z"
+                  fill="#A259FF"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M14.422 8.49219C14.7672 8.49219 15.047 8.77201 15.047 9.11719V14.1641L15.0469 14.173C15.0423 14.5013 14.9086 14.8145 14.675 15.045L12.1527 17.575C11.9926 17.7349 11.7921 17.8484 11.5725 17.9033C11.353 17.9582 11.1227 17.9524 10.9061 17.8867C10.6896 17.8209 10.495 17.6976 10.343 17.5299C10.1912 17.3623 10.0877 17.1567 10.0435 16.9349C10.0434 16.9347 10.0435 16.9351 10.0435 16.9349L9.38731 13.6619C9.31946 13.3235 9.53882 12.9941 9.87727 12.9263C10.2157 12.8584 10.5451 13.0778 10.6129 13.4162L11.2694 16.6906L13.797 14.1552V9.11719C13.797 8.77201 14.0768 8.49219 14.422 8.49219Z"
+                  fill="#A259FF"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5.82625 4.95319L5.83515 4.95312H10.882C11.2272 4.95312 11.507 5.23295 11.507 5.57812C11.507 5.9233 11.2272 6.20312 10.882 6.20312H5.84399L5.83894 6.20828L5.83891 6.20825L3.30859 8.73075L3.30956 8.73094L6.583 9.38719C6.92144 9.45504 7.1408 9.78441 7.07295 10.1229C7.0051 10.4613 6.67574 10.6807 6.33729 10.6128L3.06483 9.95675C3.06464 9.95671 3.06445 9.95668 3.06426 9.95664C2.84252 9.91244 2.6369 9.80892 2.46933 9.65711C2.30162 9.50516 2.1783 9.31054 2.11254 9.094C2.04677 8.87746 2.04103 8.64712 2.09592 8.42757C2.15081 8.20802 2.26427 8.00749 2.4242 7.84738L2.42514 7.84644L2.42514 7.84644L4.95424 5.32514C5.18475 5.09151 5.49796 4.95786 5.82625 4.95319Z"
+                  fill="#A259FF"
+                />
+              </svg>
+              <span
+                class="text-center font-work font-base font-semibold leading-140"
+                >Get Started</span
+              >
+            </button>
+          </div>
+
+          <div
+            class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-[30px] w-full"
+          >
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >1</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-5.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  keepitreal
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >1</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-6.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  DigiLab
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >1</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-7.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  GravityOne
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >1</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-8.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  Juanie
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >1</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-9.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  BlueWhale
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 hidden md:flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >4</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-10.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  Mr Fox
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 hidden md:flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >6</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-11.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  Shroomie
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 hidden md:flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >3</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-12.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  Robotica
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 hidden md:flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >9</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-13.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  RustyRobot
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 hidden md:flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >4</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-16.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  IsmailSad
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 hidden md:flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >2</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-14.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  Dotgu
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+            <!-- ======== CARD ====== -->
+            <a
+              href="artist.html"
+              aria-label="keepitreal"
+              class="bg-secondary rounded-20 hidden md:flex p-5 justify-center items-start gap-5 lg:flex-col lg:flex-none lg:items-center scale-animation"
+            >
+              <div
+                class="flex items-start w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] gap-2.5 rounded-full flex-none relative"
+              >
+                <div
+                  class="flex items-start justify-center gap-2.5 rounded-20 absolute -left-2 -top-2 bg-zinc-800 w-[30px] h-[30px] lg:-left-12"
+                >
+                  <span
+                    class="font-space text-zinc-350 text-base font-normal leading-140 absolute left-2.5 top-1"
+                    >7</span
+                  >
+                </div>
+                <img
+                  class="rounded-full w-[60px] h-[60px] lg:w-[110px] lg:h-[110px] shrink-0"
+                  alt=""
+                  src="./img/avatar-15.webp"
+                />
+              </div>
+              <div
+                class="flex flex-col justify-center items-start gap-[5px] flex-none lg:items-center"
+              >
+                <h3
+                  class="font-work text-h2 font-semibold leading-140 capitalize"
+                >
+                  Ahmed
+                </h3>
+                <p
+                  class="text-base font-work font-normal text-zinc-350 leading-140"
+                >
+                  Total Sales:
+                  <span class="font-space text-white leading-140"
+                    >43.53 ETH</span
+                  >
+                </p>
+              </div>
+            </a>
+
+            <!-- ===== Button for small devices ===-->
+
+            <button
+              class="flex md:hidden px-[3.125rem] justify-center items-center gap-3 rounded-[1.25rem] border-2 border-purple-550 h-[3.75rem] w-full md:max-w-[247px] md:self-end scale-animation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M6.17053 12.4494C6.28055 12.7766 6.10451 13.131 5.77734 13.241C4.71792 13.5973 4.15489 14.4866 3.85373 15.391C3.73414 15.7501 3.66189 16.0958 3.61848 16.3817C3.90434 16.3383 4.25006 16.266 4.60917 16.1464C5.51355 15.8453 6.4029 15.2823 6.75916 14.2228C6.86918 13.8957 7.2236 13.7196 7.55078 13.8296C7.87795 13.9397 8.05399 14.2941 7.94396 14.6213C7.4096 16.2103 6.08801 16.9715 5.00411 17.3324C4.45655 17.5148 3.94395 17.6048 3.5698 17.6497C3.38182 17.6722 3.22641 17.6836 3.116 17.6894C3.06074 17.6924 3.01658 17.6939 2.98505 17.6946C2.96928 17.695 2.95666 17.6952 2.94737 17.6954L2.93596 17.6955L2.93217 17.6955L2.93077 17.6955L2.93019 17.6955C2.92993 17.6955 2.92969 17.6955 2.92969 17.0705C2.30469 17.0705 2.30469 17.0702 2.30469 17.07L2.30469 17.0694L2.30469 17.068L2.30471 17.0642L2.30481 17.0528C2.30493 17.0435 2.30514 17.0309 2.30553 17.0151C2.30631 16.9836 2.30782 16.9394 2.31072 16.8842C2.31653 16.7738 2.32797 16.6184 2.35052 16.4304C2.3954 16.0562 2.48542 15.5436 2.66776 14.9961C3.0287 13.9122 3.78989 12.5906 5.37891 12.0562C5.70608 11.9462 6.0605 12.1222 6.17053 12.4494ZM2.92969 17.0705H2.30469C2.30469 17.4157 2.58451 17.6955 2.92969 17.6955V17.0705Z"
+                  fill="#A259FF"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16.5462 3.45406C15.8208 3.34943 14.0351 3.31002 12.2076 5.13753L7.34482 10.0003L10 12.6555L14.8627 7.79271C16.6903 5.9652 16.6508 4.17951 16.5462 3.45406ZM16.7275 2.21727C15.7298 2.07282 13.5058 2.07157 11.3237 4.25365L6.019 9.55834C5.90179 9.67555 5.83594 9.83452 5.83594 10.0003C5.83594 10.166 5.90179 10.325 6.019 10.4422L9.55806 13.9813C9.80214 14.2254 10.1979 14.2254 10.4419 13.9813L15.7466 8.67659C17.9287 6.49452 17.9275 4.27052 17.783 3.27282C17.7465 3.0058 17.6235 2.75803 17.4329 2.5674C17.2422 2.37678 16.9945 2.25382 16.7275 2.21727Z"
+                  fill="#A259FF"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M14.422 8.49219C14.7672 8.49219 15.047 8.77201 15.047 9.11719V14.1641L15.0469 14.173C15.0423 14.5013 14.9086 14.8145 14.675 15.045L12.1527 17.575C11.9926 17.7349 11.7921 17.8484 11.5725 17.9033C11.353 17.9582 11.1227 17.9524 10.9061 17.8867C10.6896 17.8209 10.495 17.6976 10.343 17.5299C10.1912 17.3623 10.0877 17.1567 10.0435 16.9349C10.0434 16.9347 10.0435 16.9351 10.0435 16.9349L9.38731 13.6619C9.31946 13.3235 9.53882 12.9941 9.87727 12.9263C10.2157 12.8584 10.5451 13.0778 10.6129 13.4162L11.2694 16.6906L13.797 14.1552V9.11719C13.797 8.77201 14.0768 8.49219 14.422 8.49219Z"
+                  fill="#A259FF"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5.82625 4.95319L5.83515 4.95312H10.882C11.2272 4.95312 11.507 5.23295 11.507 5.57812C11.507 5.9233 11.2272 6.20312 10.882 6.20312H5.84399L5.83894 6.20828L5.83891 6.20825L3.30859 8.73075L3.30956 8.73094L6.583 9.38719C6.92144 9.45504 7.1408 9.78441 7.07295 10.1229C7.0051 10.4613 6.67574 10.6807 6.33729 10.6128L3.06483 9.95675C3.06464 9.95671 3.06445 9.95668 3.06426 9.95664C2.84252 9.91244 2.6369 9.80892 2.46933 9.65711C2.30162 9.50516 2.1783 9.31054 2.11254 9.094C2.04677 8.87746 2.04103 8.64712 2.09592 8.42757C2.15081 8.20802 2.26427 8.00749 2.4242 7.84738L2.42514 7.84644L2.42514 7.84644L4.95424 5.32514C5.18475 5.09151 5.49796 4.95786 5.82625 4.95319Z"
+                  fill="#A259FF"
+                />
+              </svg>
+              <span
+                class="text-center font-work font-base font-semibold leading-140"
+                >Get Started</span
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- ============== END CREATOR ==========-->
+
+      <!-- ============ CATEGORIES ================= -->
+      <section
+        id="top"
+        class="py-10 flex justify-center items-center gap-7 md:py-20 lg:px-[195px]"
+      >
+        <div
+          class="flex flex-col items-start gap-[40px] lg:gap-[60px] w-[315px] md:w-[690px] lg:w-[1050px] lg:min-w-[1050px]"
+        >
+          <div class="flex w-full md:gap-[100px] md:justify-between">
+            <div class="w-full">
+              <h2
+                class="font-work text-h1 font-semibold leading-140 capitalize"
+              >
+                Browse Categories
+              </h2>
+            </div>
+          </div>
+
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-[30px] w-full"
+          >
+            <!-- =======CARD======-->
+            <a
+              href="marketplace.html"
+              class="flex flex-col items-center flex-none rounded-20 bg-secondary h-[209px] lg:w-[240px] lg:h-[316px] scale-animation"
+            >
+              <div
+                class="h-[142px] lg:h-[240px] w-full rounded-t-[20px] relative"
+              >
+                <div
+                  class="grid rounded-t-[20px] items-center grid-rows-1 grid-columns-1 w-full h-full shrink-0 overflow-hidden"
+                >
+                  <div class="flex justify-center row-start-1 col-start-1 z-10">
+                    <svg
+                      class="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                    >
+                      <path
+                        d="M6.25 67.5H28.75C31.9639 67.5 35.1057 66.547 37.778 64.7614C40.4503 62.9758 42.5331 60.4379 43.763 57.4686C44.993 54.4993 45.3148 51.232 44.6878 48.0798C44.0608 44.9276 42.5131 42.0321 40.2405 39.7595C37.9679 37.4869 35.0724 35.9393 31.9202 35.3122C28.768 34.6852 25.5007 35.007 22.5314 36.237C19.5621 37.4669 17.0242 39.5497 15.2386 42.222C13.453 44.8943 12.5 48.0361 12.5 51.25C12.5 62.5 6.25 67.5 6.25 67.5Z"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M35.125 36.3125C41.125 28.2188 56.375 9.6875 70.3125 9.6875C70.3125 23.625 51.7813 38.875 43.6875 44.875"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M41.5625 28.3125C45.7968 30.7022 49.2978 34.2032 51.6875 38.4375"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <img
+                    alt=""
+                    src="./img/category-1.webp"
+                    class="rounded-t-[20px] flex-none row-start-1 col-start-1 bg-white/[.1] blur-[7.5px] w-full h-full"
+                  />
+                </div>
+              </div>
+              <div
+                class="px-5 pt-5 pb-[25px] flex flex-col items-start gap-[25px] w-full"
+              >
+                <h3
+                  class="font-work text-normal font-semibold leading-140 capitalize"
+                >
+                  Art
+                </h3>
+              </div>
+            </a>
+
+            <!-- =======CARD======-->
+            <a
+              href="marketplace.html"
+              class="flex flex-col items-center flex-none rounded-20 bg-secondary h-[209px] lg:w-[240px] lg:h-[316px] scale-animation"
+            >
+              <div
+                class="h-[142px] lg:h-[240px] w-full rounded-t-[20px] relative"
+              >
+                <div
+                  class="grid rounded-t-[20px] items-center grid-rows-1 grid-columns-1 w-full h-full shrink-0 overflow-hidden"
+                >
+                  <div class="flex justify-center row-start-1 col-start-1 z-10">
+                    <svg
+                      class="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100"
+                      fill="none"
+                    >
+                      <path
+                        d="M14.3355 67.5784L23.7887 14.0237C23.8547 13.6195 24.0006 13.2325 24.2178 12.8853C24.4349 12.538 24.719 12.2375 25.0535 12.0011C25.388 11.7648 25.7662 11.5974 26.166 11.5087C26.5659 11.4201 26.9794 11.4119 27.3824 11.4846L48.9449 15.2737C49.7596 15.426 50.482 15.8919 50.9568 16.5713C51.4316 17.2506 51.6209 18.0891 51.484 18.9065L41.9918 72.7737C41.3417 76.4009 39.2977 79.6295 36.2972 81.7685C33.2966 83.9076 29.578 84.7872 25.9371 84.219C18.1637 82.969 12.9684 75.3518 14.3355 67.5784Z"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M46.21 48.7501L74.6865 38.3985C75.0737 38.2556 75.4853 38.1907 75.8977 38.2077C76.31 38.2247 76.7149 38.3232 77.089 38.4976C77.4631 38.6719 77.7989 38.9186 78.0771 39.2234C78.3553 39.5282 78.5704 39.8851 78.71 40.2735L86.21 60.8204C86.4866 61.5976 86.4447 62.4526 86.0935 63.199C85.7422 63.9454 85.1101 64.5226 84.335 64.8048L32.9287 83.5157"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M85.9375 63.4766V81.25C85.9375 82.0788 85.6083 82.8737 85.0222 83.4597C84.4362 84.0458 83.6413 84.375 82.8125 84.375H28.125"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M28.125 75C30.7138 75 32.8125 72.9013 32.8125 70.3125C32.8125 67.7237 30.7138 65.625 28.125 65.625C25.5362 65.625 23.4375 67.7237 23.4375 70.3125C23.4375 72.9013 25.5362 75 28.125 75Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  <img
+                    alt=""
+                    src="./img/category-2.webp"
+                    class="rounded-t-[20px] flex-none row-start-1 col-start-1 bg-white/[.1] blur-[7.5px] w-full h-full"
+                  />
+                </div>
+              </div>
+              <div
+                class="px-5 pt-5 pb-[25px] flex flex-col items-start gap-[25px] w-full"
+              >
+                <h3
+                  class="font-work text-normal font-semibold leading-140 capitalize"
+                >
+                  Collectibles
+                </h3>
+              </div>
+            </a>
+            <!-- =======CARD======-->
+            <a
+              href="marketplace.html"
+              class="flex flex-col items-center flex-none rounded-20 bg-secondary h-[209px] lg:w-[240px] lg:h-[316px] scale-animation"
+            >
+              <div
+                class="h-[142px] lg:h-[240px] w-full rounded-t-[20px] relative"
+              >
+                <div
+                  class="grid rounded-t-[20px] items-center grid-rows-1 grid-columns-1 w-full h-full shrink-0 overflow-hidden"
+                >
+                  <div class="flex justify-center row-start-1 col-start-1 z-10">
+                    <svg
+                      class="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100"
+                      fill="none"
+                    >
+                      <path
+                        d="M70.3125 78.125C76.3531 78.125 81.25 73.2281 81.25 67.1875C81.25 61.1469 76.3531 56.25 70.3125 56.25C64.2719 56.25 59.375 61.1469 59.375 67.1875C59.375 73.2281 64.2719 78.125 70.3125 78.125Z"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M20.3125 90.625C26.3531 90.625 31.25 85.7281 31.25 79.6875C31.25 73.6469 26.3531 68.75 20.3125 68.75C14.2719 68.75 9.375 73.6469 9.375 79.6875C9.375 85.7281 14.2719 90.625 20.3125 90.625Z"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M81.25 31.25L31.25 43.75"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M31.25 79.6875V25L81.25 12.5V67.1875"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <img
+                    alt=""
+                    src="./img/category-3.webp"
+                    class="rounded-t-[20px] flex-none row-start-1 col-start-1 bg-white/[.1] blur-[7.5px] w-full h-full"
+                  />
+                </div>
+              </div>
+              <div
+                class="px-5 pt-5 pb-[25px] flex flex-col items-start gap-[25px] w-full"
+              >
+                <h3
+                  class="font-work text-normal font-semibold leading-140 capitalize"
+                >
+                  Music
+                </h3>
+              </div>
+            </a>
+            <!-- =======CARD======-->
+            <a
+              href="marketplace.html"
+              class="flex flex-col items-center flex-none rounded-20 bg-secondary h-[209px] lg:w-[240px] lg:h-[316px] scale-animation"
+            >
+              <div
+                class="h-[142px] lg:h-[240px] w-full rounded-t-[20px] relative"
+              >
+                <div
+                  class="grid rounded-t-[20px] items-center grid-rows-1 grid-columns-1 w-full h-full shrink-0 overflow-hidden"
+                >
+                  <div class="flex justify-center row-start-1 col-start-1 z-10">
+                    <svg
+                      class="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100"
+                      fill="none"
+                    >
+                      <path
+                        d="M81.25 81.25H18.75C17.0924 81.25 15.5027 80.5915 14.3306 79.4194C13.1585 78.2473 12.5 76.6576 12.5 75V31.25C12.5 29.5924 13.1585 28.0027 14.3306 26.8306C15.5027 25.6585 17.0924 25 18.75 25H31.25L37.5 15.625H62.5L68.75 25H81.25C82.9076 25 84.4973 25.6585 85.6694 26.8306C86.8415 28.0027 87.5 29.5924 87.5 31.25V75C87.5 76.6576 86.8415 78.2473 85.6694 79.4194C84.4973 80.5915 82.9076 81.25 81.25 81.25Z"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M50 65.625C57.7665 65.625 64.0625 59.329 64.0625 51.5625C64.0625 43.796 57.7665 37.5 50 37.5C42.2335 37.5 35.9375 43.796 35.9375 51.5625C35.9375 59.329 42.2335 65.625 50 65.625Z"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <img
+                    alt=""
+                    src="./img/category-4.webp"
+                    class="rounded-t-[20px] flex-none row-start-1 col-start-1 bg-white/[.1] blur-[7.5px] w-full h-full"
+                  />
+                </div>
+              </div>
+              <div
+                class="px-5 pt-5 pb-[25px] flex flex-col items-start gap-[25px] w-full"
+              >
+                <h3
+                  class="font-work text-normal font-semibold leading-140 capitalize"
+                >
+                  Photography
+                </h3>
+              </div>
+            </a>
+            <!-- =======CARD======-->
+            <a
+              href="marketplace.html"
+              class="flex flex-col items-center flex-none rounded-20 bg-secondary h-[209px] lg:w-[240px] lg:h-[316px] scale-animation"
+            >
+              <div
+                class="h-[142px] lg:h-[240px] w-full rounded-t-[20px] relative"
+              >
+                <div
+                  class="grid rounded-t-[20px] items-center grid-rows-1 grid-columns-1 w-full h-full shrink-0 overflow-hidden"
+                >
+                  <div class="flex justify-center row-start-1 col-start-1 z-10">
+                    <svg
+                      class="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100"
+                      fill="none"
+                    >
+                      <path
+                        d="M9.375 23.4375H59.375C62.6902 23.4375 65.8696 24.7545 68.2138 27.0987C70.558 29.4429 71.875 32.6223 71.875 35.9375V73.4375C71.875 74.2663 71.5458 75.0612 70.9597 75.6472C70.3737 76.2333 69.5788 76.5625 68.75 76.5625H18.75C15.4348 76.5625 12.2554 75.2455 9.91117 72.9013C7.56696 70.5571 6.25 67.3777 6.25 64.0625V26.5625C6.25 25.7337 6.57924 24.9388 7.16529 24.3528C7.75134 23.7667 8.5462 23.4375 9.375 23.4375V23.4375Z"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M71.875 43.75L93.75 31.25V68.75L71.875 56.25"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <img
+                    alt=""
+                    src="./img/category-5.webp"
+                    class="rounded-t-[20px] flex-none row-start-1 col-start-1 bg-white/[.1] blur-[7.5px] w-full h-full"
+                  />
+                </div>
+              </div>
+              <div
+                class="px-5 pt-5 pb-[25px] flex flex-col items-start gap-[25px] w-full"
+              >
+                <h3
+                  class="font-work text-normal font-semibold leading-140 capitalize"
+                >
+                  Video
+                </h3>
+              </div>
+            </a>
+            <!-- =======CARD======-->
+            <a
+              href="marketplace.html"
+              class="flex flex-col items-center flex-none rounded-20 bg-secondary h-[209px] lg:w-[240px] lg:h-[316px] scale-animation"
+            >
+              <div
+                class="h-[142px] lg:h-[240px] w-full rounded-t-[20px] relative"
+              >
+                <div
+                  class="grid rounded-t-[20px] items-center grid-rows-1 grid-columns-1 w-full h-full shrink-0 overflow-hidden"
+                >
+                  <div class="flex justify-center row-start-1 col-start-1 z-10">
+                    <svg
+                      class="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100"
+                      fill="none"
+                    >
+                      <path
+                        d="M84.375 50V68.75"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M75 59.375H93.75"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M32.8125 15.625V31.25"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M25 23.4375H40.625"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M65.625 71.875V84.375"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M59.375 78.125H71.875"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M72.8218 14.6987L14.7341 72.7864C13.5137 74.0068 13.5137 75.9854 14.7341 77.2058L22.8134 85.285C24.0338 86.5054 26.0124 86.5054 27.2328 85.285L85.3205 27.1973C86.5409 25.9769 86.5409 23.9983 85.3205 22.7779L77.2413 14.6987C76.0209 13.4783 74.0422 13.4783 72.8218 14.6987Z"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M56.25 31.25L68.75 43.75"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <img
+                    alt=""
+                    src="./img/category-6.webp"
+                    class="rounded-t-[20px] flex-none row-start-1 col-start-1 bg-white/[.1] blur-[7.5px] w-full h-full"
+                  />
+                </div>
+              </div>
+              <div
+                class="px-5 pt-5 pb-[25px] flex flex-col items-start gap-[25px] w-full"
+              >
+                <h3
+                  class="font-work text-normal font-semibold leading-140 capitalize"
+                >
+                  Utility
+                </h3>
+              </div>
+            </a>
+            <!-- =======CARD======-->
+            <a
+              href="marketplace.html"
+              class="flex flex-col items-center flex-none rounded-20 bg-secondary h-[209px] lg:w-[240px] lg:h-[316px] scale-animation"
+            >
+              <div
+                class="h-[142px] lg:h-[240px] w-full rounded-t-[20px] relative"
+              >
+                <div
+                  class="grid rounded-t-[20px] items-center grid-rows-1 grid-columns-1 w-full h-full shrink-0 overflow-hidden"
+                >
+                  <div class="flex justify-center row-start-1 col-start-1 z-10">
+                    <svg
+                      class="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100"
+                      fill="none"
+                    >
+                      <path
+                        d="M50 87.5C70.7107 87.5 87.5 70.7107 87.5 50C87.5 29.2893 70.7107 12.5 50 12.5C29.2893 12.5 12.5 29.2893 12.5 50C12.5 70.7107 29.2893 87.5 50 87.5Z"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M23.4375 23.5176C30.449 30.5474 34.383 40.0732 34.375 50.002C34.383 59.9307 30.449 69.4565 23.4375 76.4863"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M76.5642 23.5176C69.5608 30.5526 65.6289 40.0752 65.6289 50.002C65.6289 59.9287 69.5608 69.4513 76.5642 76.4863"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12.5 50H87.5"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M50 12.5V87.5"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <img
+                    alt=""
+                    src="./img/category-7.webp"
+                    class="rounded-t-[20px] flex-none row-start-1 col-start-1 bg-white/[.1] blur-[7.5px] w-full h-full"
+                  />
+                </div>
+              </div>
+              <div
+                class="px-5 pt-5 pb-[25px] flex flex-col items-start gap-[25px] w-full"
+              >
+                <h3
+                  class="font-work text-normal font-semibold leading-140 capitalize"
+                >
+                  Sport
+                </h3>
+              </div>
+            </a>
+            <!-- =======CARD======-->
+            <a
+              href="marketplace.html"
+              class="flex flex-col items-center flex-none rounded-20 bg-secondary h-[209px] lg:w-[240px] lg:h-[316px] scale-animation"
+            >
+              <div
+                class="h-[142px] lg:h-[240px] w-full rounded-t-[20px] relative"
+              >
+                <div
+                  class="grid rounded-t-[20px] items-center grid-rows-1 grid-columns-1 w-full h-full shrink-0 overflow-hidden"
+                >
+                  <div class="flex justify-center row-start-1 col-start-1 z-10">
+                    <svg
+                      class="w-[80px] h-[80px] lg:w-[100px] lg:h-[100px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100"
+                      fill="none"
+                    >
+                      <path
+                        d="M50 84.375C68.9848 84.375 84.375 68.9848 84.375 50C84.375 31.0152 68.9848 15.625 50 15.625C31.0152 15.625 15.625 31.0152 15.625 50C15.625 68.9848 31.0152 84.375 50 84.375Z"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M71.9529 23.5547C82.7732 20.586 90.8982 20.8594 93.3201 25C97.617 32.461 81.7186 49.7266 57.8123 63.5157C33.9061 77.3047 11.0154 82.461 6.6795 75C4.29669 70.8594 8.12481 63.6719 16.0936 55.7813"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <img
+                    alt=""
+                    src="./img/category-8.webp"
+                    class="rounded-t-[20px] flex-none row-start-1 col-start-1 bg-white/[.1] blur-[7.5px] w-full h-full"
+                  />
+                </div>
+              </div>
+              <div
+                class="px-5 pt-5 pb-[25px] flex flex-col items-start gap-[25px] w-full"
+              >
+                <h3
+                  class="font-work text-normal font-semibold leading-140 capitalize"
+                >
+                  Virtual Worlds
+                </h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- ============== END GATEGORIES ==========-->
+
+      <!-- ============ DISCOVER MORE ================= -->
+      <section
+        id="top"
+        class="py-10 flex justify-center items-center gap-7 md:py-20 lg:px-[195px]"
+      >
+        <div
+          class="flex flex-col items-start gap-[40px] lg:gap-[60px] w-[315px] md:w-[690px] lg:w-[1050px] lg:min-w-[1050px]"
+        >
+          <div class="flex w-full md:gap-[100px] md:justify-between">
+            <div class="w-full">
+              <h2
+                class="font-work text-h1 font-semibold leading-140 capitalize"
+              >
+                Discover More NFTs
+              </h2>
+              <p class="font-work text-base font-normal leading-140">
+                Explore new trending NFTs
+              </p>
+            </div>
+            <button
+              class="hidden md:flex px-[3.125rem] justify-center items-center gap-3 rounded-[1.25rem] border-2 border-purple-550 h-[3.75rem] w-full md:max-w-[247px] md:self-end scale-animation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M2.83931 6.74556C4.3292 5.25567 6.66714 3.75 10 3.75C13.3329 3.75 15.6708 5.25567 17.1607 6.74556C17.9038 7.4887 18.4397 8.23076 18.7906 8.78809C18.9664 9.06724 19.0966 9.30146 19.184 9.4683C19.2277 9.55176 19.2608 9.61849 19.2835 9.66569C19.2949 9.6893 19.3037 9.70804 19.3099 9.72157L19.3174 9.7379L19.3197 9.74306L19.3206 9.74487L19.3209 9.74558C19.321 9.74588 19.3211 9.74616 18.75 10C19.3211 10.2538 19.321 10.2541 19.3209 10.2544L19.3206 10.2551L19.3197 10.2569L19.3174 10.2621L19.3099 10.2784C19.3037 10.292 19.2949 10.3107 19.2835 10.3343C19.2608 10.3815 19.2277 10.4482 19.184 10.5317C19.0966 10.6985 18.9664 10.9328 18.7906 11.2119C18.4397 11.7692 17.9038 12.5113 17.1607 13.2544C15.6708 14.7443 13.3329 16.25 10 16.25C6.66714 16.25 4.3292 14.7443 2.83931 13.2544C2.09617 12.5113 1.5603 11.7692 1.20939 11.2119C1.03362 10.9328 0.903373 10.6985 0.815984 10.5317C0.772267 10.4482 0.739205 10.3815 0.716476 10.3343C0.705109 10.3107 0.696319 10.292 0.690066 10.2784L0.682582 10.2621L0.680256 10.2569L0.679445 10.2551L0.679127 10.2544C0.678993 10.2541 0.678868 10.2538 1.25 10C0.678868 9.74616 0.678993 9.74588 0.679127 9.74558L0.679445 9.74487L0.680256 9.74306L0.682582 9.7379L0.690066 9.72157C0.696319 9.70804 0.705109 9.6893 0.716476 9.66569C0.739205 9.61849 0.772267 9.55176 0.815984 9.4683C0.903373 9.30146 1.03362 9.06724 1.20939 8.78809C1.5603 8.23076 2.09617 7.4887 2.83931 6.74556ZM1.25 10L0.678868 9.74616C0.607044 9.90777 0.607044 10.0922 0.678868 10.2538L1.25 10ZM1.94882 10C2.02235 10.1377 2.12794 10.3248 2.26718 10.5459C2.58033 11.0433 3.06008 11.7074 3.72319 12.3706C5.0458 13.6932 7.08286 15 10 15C12.9171 15 14.9542 13.6932 16.2768 12.3706C16.9399 11.7074 17.4197 11.0433 17.7328 10.5459C17.8721 10.3248 17.9777 10.1377 18.0512 10C17.9777 9.86227 17.8721 9.67524 17.7328 9.4541C17.4197 8.95674 16.9399 8.29255 16.2768 7.62944C14.9542 6.30683 12.9171 5 10 5C7.08286 5 5.0458 6.30683 3.72319 7.62944C3.06008 8.29255 2.58033 8.95674 2.26718 9.4541C2.12794 9.67524 2.02235 9.86227 1.94882 10ZM18.75 10L19.3211 10.2538C19.393 10.0922 19.393 9.90777 19.3211 9.74616L18.75 10Z"
+                  fill="#A259FF"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5ZM6.25 10C6.25 7.92893 7.92893 6.25 10 6.25C12.0711 6.25 13.75 7.92893 13.75 10C13.75 12.0711 12.0711 13.75 10 13.75C7.92893 13.75 6.25 12.0711 6.25 10Z"
+                  fill="#A259FF"
+                />
+              </svg>
+              <span
+                class="text-center font-work font-base font-semibold leading-140"
+                >See All</span
+              >
+            </button>
+          </div>
+
+          <div
+            class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[30px] w-full"
+          >
+            <!-- ==========CARD======-->
+            <div
+              class="flex flex-col justify-end h-full w-full rounded-20 overflow-hidden scale-animation"
+            >
+              <a
+                href="nft.html"
+                class="w-full h-[238px] md:h-[295px] md:h-[296px]"
+              >
+                <img
+                  class="rounded-t-[20px] w-full h-full object-cover"
+                  alt="image"
+                  src="./img/explore-1.webp"
+                />
+              </a>
+              <div
+                class="px-5 pt-5 pb-[25px] gap-[25px] items-start flex flex-col justify-center shrink-0 bg-secondary"
+              >
+                <a href="nft.html" class="flex flex-col items-start gap-[5px]">
+                  <h2
+                    class="font-work text-h2 font-semibold leading-140 capitalize"
+                  >
+                    Distant Galaxy
+                  </h2>
+                  <div class="flex items-start gap-3 w-full">
+                    <div
+                      class="flex justify-center items-center shrink-0 w-6 h-6 rounded-[7.5rem]"
+                    >
+                      <img
+                        class="w-6 h-6 rounded-[7.5rem]"
+                        alt="avatar 1"
+                        src="./img/avatar-5.webp"
+                      />
+                    </div>
+                    <h3 class="font-space text-base font-normal leading-140">
+                      MoonDancer
+                    </h3>
+                  </div>
+                </a>
+                <div class="flex flex-start justify-between w-full">
+                  <div class="flex flex-col gap-2">
+                    <p
+                      class="font-space font-normal text-zinc-350 text-xs leading-110"
+                    >
+                      Price
+                    </p>
+                    <span
+                      class="font-space text-white text-xs leading-110 md:text-base md:leading-140"
+                      >1.36 ETH</span
+                    >
+                  </div>
+
+                  <div class="flex flex-col gap-2">
+                    <p
+                      class="font-space font-normal text-zinc-350 text-xs leading-110"
+                    >
+                      Highest Bid
+                    </p>
+                    <span
+                      class="font-space text-white text-xs leading-110 md:text-base md:leading-140"
+                      >0.33 wETH</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ==========CARD======-->
+            <div
+              class="flex flex-col justify-end h-full w-full rounded-20 overflow-hidden scale-animation"
+            >
+              <a href="nft.html" class="w-full h-[238px] md:h-[295px]">
+                <img
+                  class="rounded-t-[20px] w-full h-full object-cover"
+                  alt="image"
+                  src="./img/explore-2.webp"
+                />
+              </a>
+              <div
+                class="px-5 pt-5 pb-[25px] gap-[25px] items-start flex flex-col justify-center shrink-0 bg-secondary"
+              >
+                <a href="nft.html" class="flex flex-col items-start gap-[5px]">
+                  <h2
+                    class="font-work text-h2 font-semibold leading-140 capitalize"
+                  >
+                    Life On Edena
+                  </h2>
+                  <div class="flex items-start gap-3 w-full">
+                    <div
+                      class="flex justify-center items-center shrink-0 w-6 h-6 rounded-[7.5rem]"
+                    >
+                      <img
+                        class="w-6 h-6 rounded-[7.5rem]"
+                        alt="avatar 1"
+                        src="./img/avatar-3.webp"
+                      />
+                    </div>
+                    <h3 class="font-space text-base font-normal leading-140">
+                      NebulaKid
+                    </h3>
+                  </div>
+                </a>
+                <div class="flex flex-start justify-between w-full">
+                  <div class="flex flex-col gap-2">
+                    <p
+                      class="font-space font-normal text-zinc-350 text-xs leading-110"
+                    >
+                      Price
+                    </p>
+                    <span
+                      class="font-space text-white text-xs leading-110 md:text-base md:leading-140"
+                      >1.36 ETH</span
+                    >
+                  </div>
+
+                  <div class="flex flex-col gap-2">
+                    <p
+                      class="font-space font-normal text-zinc-350 text-xs leading-110"
+                    >
+                      Highest Bid
+                    </p>
+                    <span
+                      class="font-space text-white text-xs leading-110 md:text-base md:leading-140"
+                      >0.33 wETH</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ==========CARD======-->
+            <div
+              class="flex md:hidden lg:flex flex-col justify-end h-full w-full rounded-20 overflow-hidden scale-animation"
+            >
+              <a href="nft.html" class="w-full h-[238px] md:h-[295px]">
+                <img
+                  class="rounded-t-[20px] w-full h-full object-cover"
+                  alt="image"
+                  src="./img/explore-3.webp"
+                />
+              </a>
+              <div
+                class="px-5 pt-5 pb-[25px] gap-[25px] items-start flex flex-col justify-center shrink-0 bg-secondary"
+              >
+                <a href="nft.html" class="flex flex-col items-start gap-[5px]">
+                  <h2
+                    class="font-work text-h2 font-semibold leading-140 capitalize"
+                  >
+                    AstroFiction
+                  </h2>
+                  <div class="flex items-start gap-3 w-full">
+                    <div
+                      class="flex justify-center items-center shrink-0 w-6 h-6 rounded-[7.5rem]"
+                    >
+                      <img
+                        class="w-6 h-6 rounded-[7.5rem]"
+                        alt="avatar 1"
+                        src="./img/avatar-15.webp"
+                      />
+                    </div>
+                    <h3 class="font-space text-base font-normal leading-140">
+                      IsmailSad
+                    </h3>
+                  </div>
+                </a>
+                <div class="flex flex-start justify-between w-full">
+                  <div class="flex flex-col gap-2">
+                    <p
+                      class="font-space font-normal text-zinc-350 text-xs leading-110"
+                    >
+                      Price
+                    </p>
+                    <span
+                      class="font-space text-white text-xs leading-110 md:text-base md:leading-140"
+                      >1.36 ETH</span
+                    >
+                  </div>
+
+                  <div class="flex flex-col gap-2">
+                    <p
+                      class="font-space font-normal text-zinc-350 text-xs leading-110"
+                    >
+                      Highest Bid
+                    </p>
+                    <span
+                      class="font-space text-white text-xs leading-110 md:text-base md:leading-140"
+                      >0.33 wETH</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ===== Button for small devices ===-->
+
+            <button
+              class="flex md:hidden px-[3.125rem] mt-5 justify-center items-center gap-3 rounded-[1.25rem] border-2 border-purple-550 h-[3.75rem] w-full md:max-w-[247px] md:self-end scale-animation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M2.83931 6.74556C4.3292 5.25567 6.66714 3.75 10 3.75C13.3329 3.75 15.6708 5.25567 17.1607 6.74556C17.9038 7.4887 18.4397 8.23076 18.7906 8.78809C18.9664 9.06724 19.0966 9.30146 19.184 9.4683C19.2277 9.55176 19.2608 9.61849 19.2835 9.66569C19.2949 9.6893 19.3037 9.70804 19.3099 9.72157L19.3174 9.7379L19.3197 9.74306L19.3206 9.74487L19.3209 9.74558C19.321 9.74588 19.3211 9.74616 18.75 10C19.3211 10.2538 19.321 10.2541 19.3209 10.2544L19.3206 10.2551L19.3197 10.2569L19.3174 10.2621L19.3099 10.2784C19.3037 10.292 19.2949 10.3107 19.2835 10.3343C19.2608 10.3815 19.2277 10.4482 19.184 10.5317C19.0966 10.6985 18.9664 10.9328 18.7906 11.2119C18.4397 11.7692 17.9038 12.5113 17.1607 13.2544C15.6708 14.7443 13.3329 16.25 10 16.25C6.66714 16.25 4.3292 14.7443 2.83931 13.2544C2.09617 12.5113 1.5603 11.7692 1.20939 11.2119C1.03362 10.9328 0.903373 10.6985 0.815984 10.5317C0.772267 10.4482 0.739205 10.3815 0.716476 10.3343C0.705109 10.3107 0.696319 10.292 0.690066 10.2784L0.682582 10.2621L0.680256 10.2569L0.679445 10.2551L0.679127 10.2544C0.678993 10.2541 0.678868 10.2538 1.25 10C0.678868 9.74616 0.678993 9.74588 0.679127 9.74558L0.679445 9.74487L0.680256 9.74306L0.682582 9.7379L0.690066 9.72157C0.696319 9.70804 0.705109 9.6893 0.716476 9.66569C0.739205 9.61849 0.772267 9.55176 0.815984 9.4683C0.903373 9.30146 1.03362 9.06724 1.20939 8.78809C1.5603 8.23076 2.09617 7.4887 2.83931 6.74556ZM1.25 10L0.678868 9.74616C0.607044 9.90777 0.607044 10.0922 0.678868 10.2538L1.25 10ZM1.94882 10C2.02235 10.1377 2.12794 10.3248 2.26718 10.5459C2.58033 11.0433 3.06008 11.7074 3.72319 12.3706C5.0458 13.6932 7.08286 15 10 15C12.9171 15 14.9542 13.6932 16.2768 12.3706C16.9399 11.7074 17.4197 11.0433 17.7328 10.5459C17.8721 10.3248 17.9777 10.1377 18.0512 10C17.9777 9.86227 17.8721 9.67524 17.7328 9.4541C17.4197 8.95674 16.9399 8.29255 16.2768 7.62944C14.9542 6.30683 12.9171 5 10 5C7.08286 5 5.0458 6.30683 3.72319 7.62944C3.06008 8.29255 2.58033 8.95674 2.26718 9.4541C2.12794 9.67524 2.02235 9.86227 1.94882 10ZM18.75 10L19.3211 10.2538C19.393 10.0922 19.393 9.90777 19.3211 9.74616L18.75 10Z"
+                  fill="#A259FF"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5ZM6.25 10C6.25 7.92893 7.92893 6.25 10 6.25C12.0711 6.25 13.75 7.92893 13.75 10C13.75 12.0711 12.0711 13.75 10 13.75C7.92893 13.75 6.25 12.0711 6.25 10Z"
+                  fill="#A259FF"
+                />
+              </svg>
+              <span
+                class="text-center font-work font-base font-semibold leading-140"
+                >See All</span
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- ============== END DISCOVER MORE ==========-->
+
+      <!-- ============ HOW IT WORKS ================= -->
+      <section
+        id="top"
+        class="py-10 flex justify-center items-center gap-7 md:py-20 lg:px-[195px]"
+      >
+        <div
+          class="flex flex-col items-start gap-[40px] lg:gap-[60px] w-[315px] md:w-[690px] lg:w-[1050px] lg:min-w-[1050px]"
+        >
+          <div class="flex w-full md:gap-[100px] md:justify-between">
+            <div class="w-full">
+              <h2
+                class="font-work text-h1 font-semibold leading-140 capitalize"
+              >
+                How It Works
+              </h2>
+              <p class="font-work text-base font-normal leading-140">
+                Find out how to get started
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col md:grid md:grid-cols-3 gap-5 md:gap-[30px] w-full"
+          >
+            <!--======= CARD ===========-->
+            <div
+              class="flex justify-between items-center p-5 rounded-20 bg-secondary md:pt-2.5 md:px-5 md:pt-[30px] md:flex-col md:gap-5 md:justify-normal lg:px-[30px] lg:pt-2.5 lg:pb-[30px]"
+            >
+              <div
+                class="w-[100px] h-[100px] relative md:w-[160px] md:h-[160px] lg:w-[250px] lg:h-[250px]"
+              >
+                <img
+                  alt=""
+                  src="./img/icon-1.webp"
+                  class="w-[100px] h-[100px] md:w-[160px] md:h-[160px] lg:w-[250px] lg:h-[250px]"
+                />
+              </div>
+              <div
+                class="flex flex-col items-start gap-2.5 w-[155px] md:items-center lg:w-full"
+              >
+                <h3
+                  class="font-work text-base leading-140 font-semibold md:text-center lg:text-h2"
+                >
+                  Setup Your wallet
+                </h3>
+                <p
+                  class="font-work text-xs font-normal leading-140 md:text-center"
+                >
+                  Set up your wallet of choice. Connect it to the NFT market by
+                  clicking the wallet icon in the top right corner.
+                </p>
+              </div>
+            </div>
+
+            <!--======= CARD ===========-->
+            <div
+              class="flex justify-between items-center p-5 rounded-20 bg-secondary md:pt-2.5 md:px-5 md:pt-[30px] md:flex-col md:gap-5 md:justify-normal lg:px-[30px] lg:pt-2.5 lg:pb-[30px]"
+            >
+              <div
+                class="w-[100px] h-[100px] relative md:w-[160px] md:h-[160px] lg:w-[250px] lg:h-[250px]"
+              >
+                <img
+                  alt=""
+                  src="./img/icon-2.webp"
+                  class="w-[100px] h-[100px] md:w-[160px] md:h-[160px] lg:w-[250px] lg:h-[250px]"
+                />
+              </div>
+              <div
+                class="flex flex-col items-start gap-2.5 w-[155px] md:items-center lg:w-full"
+              >
+                <h3
+                  class="font-work text-base leading-140 font-semibold md:text-center lg:text-h2"
+                >
+                  Create Collection
+                </h3>
+                <p
+                  class="font-work text-xs font-normal leading-140 md:text-center"
+                >
+                  Upload your work and setup your collection. Add a description,
+                  social links and floor price.
+                </p>
+              </div>
+            </div>
+            <!--======= CARD ===========-->
+            <div
+              class="flex justify-between items-center p-5 rounded-20 bg-secondary md:pt-2.5 md:px-5 md:pt-[30px] md:flex-col md:gap-5 md:justify-normal lg:px-[30px] lg:pt-2.5 lg:pb-[30px]"
+            >
+              <div
+                class="w-[100px] h-[100px] md:w-[160px] md:h-[160px] lg:w-[250px] lg:h-[250px] relative"
+              >
+                <img
+                  alt=""
+                  src="./img/icon-3.webp"
+                  class="w-[100px] h-[100px] md:w-[160px] md:h-[160px] lg:w-[250px] lg:h-[250px]"
+                />
+              </div>
+              <div
+                class="flex flex-col items-start gap-2.5 w-[155px] md:items-center lg:w-full"
+              >
+                <h3
+                  class="font-work text-base leading-140 font-semibold md:text-center lg:text-h2"
+                >
+                  Start Earning
+                </h3>
+                <p
+                  class="font-work text-xs font-normal leading-140 md:text-center"
+                >
+                  Choose between auctions and fixed-price listings. Start
+                  earning by selling your NFTs or trading others.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============== END CREATOR ==========-->
+
+      <!-- ============ NEWSLATTER ================= -->
+      <section
+        id="top"
+        class="py-10 flex justify-center items-center gap-7 md:py-20 lg:px-[195px]"
+      >
+        <div
+          class="flex flex-col items-center gap-[30px] lg:gap-[60px] w-[315px] md:grid md:grid-cols-2 md:w-[690px] md:py-[40px] md:px-[30px] md:justify-center md:flex-row md:bg-secondary md:rounded-20 lg:w-[1050px] lg:min-w-[1050px] lg:p-[60px] lg:gap-[80px]"
+        >
+          <div
+            class="h-[255px] rounded-20 overflow-hidden md:min-h-full lg:h-[310px]"
+          >
+            <img
+              alt=""
+              src="./img/newslatter.webp"
+              class="w-full h-full object-cover rounded-20"
+            />
+          </div>
+
+          <div class="flex flex-col items-start gap-[40px]">
+            <div class="flex flex-col items-start gap-2.5">
+              <h3
+                class="font-work text-h1 leading-140 font-semibold capitalize lg:text-[38px] lg:leading-[120%]"
+              >
+                Join our weekly digest
+              </h3>
+              <p
+                class="font-work text-base font-normal leading-140 lg:text-h2 lg:leading-160"
+              >
+                Get exclusive promotions & updates straight to your inbox.
+              </p>
+            </div>
+            <div class="w-full flex flex-col items-center gap-4 lg:relative">
+              <input
+                placeholder="Enter your email here"
+                type="email"
+                aria-label="newslatter email"
+                class="flex h-[46px] w-full px-5 py-4 items-center gap-3 rounded-20 border border-solid border-zinc-500 font-work text-base font-normal leading-140 text-black placeholder:text-zinc-800 focus:outline-none lg:h-[60px]"
+              />
+              <button
+                class="flex px-[3.125rem] justify-center items-center gap-3 rounded-[1.25rem] border-2 border-purple-550 bg-purple-550 h-[2.875rem] w-full md:self-end lg:h-[60px] lg:py-0 lg:px-[50px] lg:justify-end lg:items-center lg:absolute lg:w-fit scale-animation"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.875 4.375C1.875 4.02982 2.15482 3.75 2.5 3.75H17.5C17.8452 3.75 18.125 4.02982 18.125 4.375V15C18.125 15.3315 17.9933 15.6495 17.7589 15.8839C17.5245 16.1183 17.2065 16.25 16.875 16.25H3.125C2.79348 16.25 2.47554 16.1183 2.24112 15.8839C2.0067 15.6495 1.875 15.3315 1.875 15V4.375ZM3.125 5V15H16.875V5H3.125Z"
+                    fill="white"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.03928 3.95268C2.27253 3.69823 2.66788 3.68104 2.92233 3.91428L10 10.4021L17.0777 3.91428C17.3321 3.68104 17.7275 3.69823 17.9607 3.95268C18.194 4.20713 18.1768 4.60248 17.9223 4.83573L10.4223 11.7107C10.1834 11.9298 9.81663 11.9298 9.57768 11.7107L2.07768 4.83573C1.82323 4.60248 1.80604 4.20713 2.03928 3.95268Z"
+                    fill="white"
+                  />
+                </svg>
+                <span
+                  class="text-center font-work font-base font-semibold leading-140"
+                  >Subscribe</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============== END NEWSLATTER ==========-->
+    </main>
+
+    <!-- ============ FOOTER ================= -->
+    <footer
+      id="footer"
+      class="w-full h-full bg-secondary text-white py-10 flex flex-col items-center justify-center gap-[49px] lg:gap-[30px] md:py-20 lg:px-[195px] lg:py-10"
+    >
+      <div
+        class="flex flex-col items-center gap-[30px] lg:grid lg:grid-cols-[327.414px_240px_420px] lg:items-start lg:gap-0 w-[315px] md:w-[690px] lg:w-[1050px] lg:min-w-[1050px]"
+      >
+        <div
+          class="flex flex-col items-start gap-5 w-full lg:gap-[30px] lg:w-[327.414px]"
+        >
+          <a
+            href="/"
+            aria-label="home page"
+            class="w-[243.414px] h-[32px] flex justify-center items-center gap-2.5"
+          >
+            <img alt="" src="./img/logo_img.svg" class="w-[32px] h-[32px]" />
+            <img alt="" src="./img/logo_txt.svg" class="w-full h-[21px]" />
+          </a>
+
+          <div class="flex flex-col items-start gap-5">
+            <p
+              class="font-work text-base font-normal leading-140 text-stone-300"
+            >
+              NFT marketplace UI created with Anima for Figma.
+            </p>
+
+            <div class="flex flex-col items-start gap-[15px]">
+              <p
+                class="font-work text-base font-normal leading-140 text-stone-300"
+              >
+                Join our communaty
+              </p>
+              <div class="flex items-start gap-2.5">
+                <a
+                  href="https://discord.com"
+                  aria-label="discor"
+                  target="_blank"
+                >
+                  <img
+                    alt=""
+                    src="./img/discord-icon.svg"
+                    class="w-[32px] h-[32px]"
+                  />
+                </a>
+
+                <a
+                  href="https://youtube.com"
+                  aria-label="youtube"
+                  target="_blank"
+                >
+                  <img
+                    alt=""
+                    src="./img/youtube-icon.svg"
+                    class="w-[32px] h-[32px]"
+                  />
+                </a>
+
+                <a
+                  href="https://twitter.com"
+                  aria-label="twitter"
+                  target="_blank"
+                >
+                  <img
+                    alt=""
+                    src="./img/twitter-icon.svg"
+                    class="w-[32px] h-[32px]"
+                  />
+                </a>
+
+                <a
+                  href="https://instagram.com"
+                  aria-label="instagram"
+                  target="_blank"
+                >
+                  <img
+                    alt=""
+                    src="./img/instagram-icon.svg"
+                    class="w-[32px] h-[32px]"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col items-start gap-5 w-full lg:gap-[25px] lg:w-[240px] lg:pl-[84px]"
+        >
+          <h3 class="font-space text-h2 font-bold leading-160 capitalize">
+            Explore
+          </h3>
+
+          <div class="flex flex-col items-start gap-5">
+            <a
+              href="marketplace.html"
+              class="font-work text-base font-normal leading-140 text-stone-300"
+            >
+              Marketplace
+            </a>
+
+            <a
+              href="rankings.html"
+              class="font-work text-base font-normal leading-140 text-stone-300"
+            >
+              Rankings
+            </a>
+
+            <a
+              href="wallet.html"
+              class="font-work text-base font-normal leading-140 text-stone-300"
+            >
+              Connect a wallet
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col items-start gap-5 w-full lg:gap-[25px] lg:ml-10"
+        >
+          <h3 class="font-space text-h2 font-bold leading-160 capitalize">
+            Join our weekly digest
+          </h3>
+
+          <div class="flex flex-col items-start gap-5">
+            <p
+              class="font-work text-base font-normal leading-140 text-stone-300"
+            >
+              Get exclusive promotions & updates straight to your inbox.
+            </p>
+
+            <div class="w-full flex flex-col items-center gap-4 lg:relative">
+              <input
+                placeholder="Enter your email here"
+                type="email"
+                aria-label="newslatter email"
+                class="flex h-[46px] w-full px-5 py-4 items-center gap-3 rounded-20 border border-solid border-zinc-500 font-work text-base font-normal leading-140 text-black placeholder:text-zinc-800 focus:outline-none md:h-[60px]"
+              />
+              <button
+                class="flex px-[3.125rem] justify-center items-center gap-3 rounded-[1.25rem] border-2 border-purple-550 bg-purple-550 h-[2.875rem] w-full md:self-end md:h-[60px] md:py-0 md:px-[50px] md:justify-end md:items-center md:absolute md:w-fit scale-animation"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.875 4.375C1.875 4.02982 2.15482 3.75 2.5 3.75H17.5C17.8452 3.75 18.125 4.02982 18.125 4.375V15C18.125 15.3315 17.9933 15.6495 17.7589 15.8839C17.5245 16.1183 17.2065 16.25 16.875 16.25H3.125C2.79348 16.25 2.47554 16.1183 2.24112 15.8839C2.0067 15.6495 1.875 15.3315 1.875 15V4.375ZM3.125 5V15H16.875V5H3.125Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.03928 3.95268C2.27253 3.69823 2.66788 3.68104 2.92233 3.91428L10 10.4021L17.0777 3.91428C17.3321 3.68104 17.7275 3.69823 17.9607 3.95268C18.194 4.20713 18.1768 4.60248 17.9223 4.83573L10.4223 11.7107C10.1834 11.9298 9.81663 11.9298 9.57768 11.7107L2.07768 4.83573C1.82323 4.60248 1.80604 4.20713 2.03928 3.95268Z"
+                    fill="white"
+                  ></path>
+                </svg>
+                <span
+                  class="text-center font-work font-base font-semibold leading-140"
+                  >Subscribe</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col items-start gap-5 w-[315px] md:w-[690px] lg:w-[1050px] lg:min-w-[1050px]"
+      >
+        <hr class="w-full h-px bg-zinc-500 border-0" />
+        <span class="font-work text-xs text-stone-300 font-normal leading-110">
+          &copy; NFT Market. Use this template freely.
+        </span>
+      </div>
+    </footer>
+    <!-- ============== END FOOTER ==========-->
+
+    <!-- ============== SCRIPTS ============== -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

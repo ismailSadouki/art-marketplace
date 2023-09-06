@@ -1,27 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NFT Marketplace</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- =========== ==============-->
-    <meta name="description" content="ART marketplace">
-    <meta name="keywords" content="art, music , images">
-    <meta name="author" content="John Doe">
-
+    <meta name="description" content="ART marketplace" />
+    <meta name="keywords" content="art, music , images" />
+    <meta name="author" content="John Doe" />
   </head>
   <body>
-
-
     <!-- ============= HEADER ========== -->
-    <header class="bg-zinc-800 ">
-      <nav class="flex py-5 my-0 mx-auto px-3 md:px-[50px] justify-between items-center max-w-[1366px] relative">
-        <a href="/" aria-label="home page" class="w-[243.414px] h-[32px] flex justify-center items-center gap-2.5 shrink-0">
-          <img alt="" src="./img/logo_img.svg" class="w-[32px] h-[32px]">
-          <img alt="" src="./img/logo_txt.svg" class="w-full h-[21px]">
+    <header class="bg-zinc-800">
+      <nav
+        class="flex py-5 my-0 mx-auto px-3 md:px-[50px] justify-between items-center max-w-[1366px] relative"
+      >
+        <a
+          href="/"
+          aria-label="home page"
+          class="w-[243.414px] h-[32px] flex justify-center items-center gap-2.5 shrink-0"
+        >
+          <img alt="" src="./img/logo_img.svg" class="w-[32px] h-[32px]" />
+          <img alt="" src="./img/logo_txt.svg" class="w-full h-[21px]" />
         </a>
 
         <div
@@ -31,7 +34,8 @@
           aria-pressed="false"
           onclick="toggleNav(event, 'show')"
           onKeyDown="toggleNav(event, 'show') "
-          class="  flex lg:hidden flex-col gap-1.5 justify-center items-start w-6 h-6 transition-all duration-300">
+          class="flex lg:hidden flex-col gap-1.5 justify-center items-start w-6 h-6 transition-all duration-300"
+        >
           <span class="w-9/12 h-0.5 bg-white rounded-20"></span>
           <span class="w-full h-0.5 bg-white rounded-20"></span>
           <span class="w-9/12 h-0.5 bg-white rounded-20"></span>
@@ -44,36 +48,81 @@
           aria-pressed="false"
           onclick="toggleNav(event, 'close')"
           onKeyDown="toggleNav(event, 'close') "
-          class="hidden lg:hidden flex-col gap-1.5 justify-center relative items-start w-6 h-6 transition-all duration-300">
-          <span class="w-full h-0.5 bg-white rounded-20 absolute rotate-45"></span>
-          <span class="w-full h-0.5 bg-white rounded-20 absolute -rotate-45"></span>
+          class="hidden lg:hidden flex-col gap-1.5 justify-center relative items-start w-6 h-6 transition-all duration-300"
+        >
+          <span
+            class="w-full h-0.5 bg-white rounded-20 absolute rotate-45"
+          ></span>
+          <span
+            class="w-full h-0.5 bg-white rounded-20 absolute -rotate-45"
+          ></span>
         </div>
-        <ul id="nav-menu" class="absolute bg-neutral-900 items-start justify-start flex-col top-[62px] left-[-200vh] md:pl-[45px] h-[217px]
-        transition-all duration-300
-        flex lg:justify-end lg:items-center lg:gap-2.5 lg:bg-transparent lg:static lg:flex-row lg:h-auto lg:pl-0">
-          <li class="flex h-[46px] w-screen lg:w-auto py-0 px-5 justify-start lg:justify-center gap-3 rounded-20 items-center">
-            <a href="marketplace.html" class="text-center text-base font-work font-semibold leading-140 text-white">
+        <ul
+          id="nav-menu"
+          class="absolute bg-neutral-900 items-start justify-start flex-col top-[62px] left-[-200vh] md:pl-[45px] h-[217px] transition-all duration-300 flex lg:justify-end lg:items-center lg:gap-2.5 lg:bg-transparent lg:static lg:flex-row lg:h-auto lg:pl-0"
+        >
+          <li
+            class="flex h-[46px] w-screen lg:w-auto py-0 px-5 justify-start lg:justify-center gap-3 rounded-20 items-center"
+          >
+            <a
+              href="marketplace.html"
+              class="text-center text-base font-work font-semibold leading-140 text-white"
+            >
               Marketplace
             </a>
           </li>
 
-          <li class="flex h-[46px] py-0 px-5 justify-center gap-3 rounded-20 items-center">
-            <a href="rankings.html" class="text-center text-base font-work font-semibold leading-140 text-white">
+          <li
+            class="flex h-[46px] py-0 px-5 justify-center gap-3 rounded-20 items-center"
+          >
+            <a
+              href="rankings.html"
+              class="text-center text-base font-work font-semibold leading-140 text-white"
+            >
               Rankings
             </a>
           </li>
-          <li class="flex h-[46px] py-0 px-5 justify-center gap-3 rounded-20 items-center">
-            <a href="wallet.html" class="text-center text-base font-work font-semibold leading-140 text-white">
+          <li
+            class="flex h-[46px] py-0 px-5 justify-center gap-3 rounded-20 items-center"
+          >
+            <a
+              href="wallet.html"
+              class="text-center text-base font-work font-semibold leading-140 text-white"
+            >
               Connect a wallet
             </a>
           </li>
-          <li class="flex h-[46px] mt-2.5 lg:py-0 px-5 justify-center gap-3 rounded-20 items-center">
-            <a href="login.html" class="flex px-[30px] justify-center items-center gap-3 rounded-20 bg-purple-550 h-[60px] w-full scale-animation">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 3.125C7.58375 3.125 5.625 5.08375 5.625 7.5C5.625 9.91625 7.58375 11.875 10 11.875C12.4162 11.875 14.375 9.91625 14.375 7.5C14.375 5.08375 12.4162 3.125 10 3.125ZM4.375 7.5C4.375 4.3934 6.8934 1.875 10 1.875C13.1066 1.875 15.625 4.3934 15.625 7.5C15.625 10.6066 13.1066 13.125 10 13.125C6.8934 13.125 4.375 10.6066 4.375 7.5Z" fill="white"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0001 13.124C8.57374 13.124 7.17251 13.4995 5.93728 14.2128C4.70205 14.926 3.67634 15.9518 2.96327 17.1872C2.79071 17.4861 2.40848 17.5886 2.10953 17.416C1.81058 17.2435 1.70812 16.8612 1.88068 16.5623C2.70345 15.1369 3.88696 13.9532 5.31223 13.1303C6.7375 12.3073 8.3543 11.874 10.0001 11.874C11.6459 11.874 13.2627 12.3073 14.688 13.1303C16.1132 13.9532 17.2968 15.1369 18.1195 16.5623C18.2921 16.8612 18.1896 17.2435 17.8907 17.416C17.5917 17.5886 17.2095 17.4861 17.0369 17.1872C16.3239 15.9518 15.2982 14.926 14.0629 14.2128C12.8277 13.4995 11.4265 13.124 10.0001 13.124Z" fill="white"/>
+          <li
+            class="flex h-[46px] mt-2.5 lg:py-0 px-5 justify-center gap-3 rounded-20 items-center"
+          >
+            <a
+              href="login.html"
+              class="flex px-[30px] justify-center items-center gap-3 rounded-20 bg-purple-550 h-[60px] w-full scale-animation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10 3.125C7.58375 3.125 5.625 5.08375 5.625 7.5C5.625 9.91625 7.58375 11.875 10 11.875C12.4162 11.875 14.375 9.91625 14.375 7.5C14.375 5.08375 12.4162 3.125 10 3.125ZM4.375 7.5C4.375 4.3934 6.8934 1.875 10 1.875C13.1066 1.875 15.625 4.3934 15.625 7.5C15.625 10.6066 13.1066 13.125 10 13.125C6.8934 13.125 4.375 10.6066 4.375 7.5Z"
+                  fill="white"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.0001 13.124C8.57374 13.124 7.17251 13.4995 5.93728 14.2128C4.70205 14.926 3.67634 15.9518 2.96327 17.1872C2.79071 17.4861 2.40848 17.5886 2.10953 17.416C1.81058 17.2435 1.70812 16.8612 1.88068 16.5623C2.70345 15.1369 3.88696 13.9532 5.31223 13.1303C6.7375 12.3073 8.3543 11.874 10.0001 11.874C11.6459 11.874 13.2627 12.3073 14.688 13.1303C16.1132 13.9532 17.2968 15.1369 18.1195 16.5623C18.2921 16.8612 18.1896 17.2435 17.8907 17.416C17.5917 17.5886 17.2095 17.4861 17.0369 17.1872C16.3239 15.9518 15.2982 14.926 14.0629 14.2128C12.8277 13.4995 11.4265 13.124 10.0001 13.124Z"
+                  fill="white"
+                />
               </svg>
-              <span class="text-center font-work font-base font-semibold leading-140 text-white">Sign Up</span>
+              <span
+                class="text-center font-work font-base font-semibold leading-140 text-white"
+                >Sign Up</span
+              >
             </a>
           </li>
         </ul>
@@ -82,204 +131,554 @@
 
     <!--================== MAIN================ -->
     <main class="w-full h-full bg-zinc-800 text-white overflow-hidden">
-
-
       <!-- ============ HEAD ================= -->
-      <section id="top" class="flex justify-center flex-col items-center  md:gap-10 md:grid md:grid-cols-2 ">
+      <section
+        id="top"
+        class="flex justify-center flex-col items-center md:gap-10 md:grid md:grid-cols-2"
+      >
         <div class="flex flex-col items-center min-w-full min-h-full md:h-full">
           <img
             alt="bg"
             src="./img/login_bg.webp"
             class="h-[250px] md:h-full w-full object-cover"
-            >
+          />
         </div>
 
-        <div class="flex flex-col items-start gap-[30px] w-[315px] pt-[30px] pb-[40px] md:py-[80px] lg:py-[100px] md:w-[325px] lg:w-[460px] " >
-          <div class="w-full flex flex-col gap-5 ">
-            <h2 class="font-work text-h1 font-semibold leading-140 capitalize lg:text-[51px]">Connect Wallet</h2>
+        <div
+          class="flex flex-col items-start gap-[30px] w-[315px] pt-[30px] pb-[40px] md:py-[80px] lg:py-[100px] md:w-[325px] lg:w-[460px]"
+        >
+          <div class="w-full flex flex-col gap-5">
+            <h2
+              class="font-work text-h1 font-semibold leading-140 capitalize lg:text-[51px]"
+            >
+              Connect Wallet
+            </h2>
             <p class="font-work font-normal text-base leading-140 lg:text-h2">
-              Choose a wallet you want to connect. There are several wallet providers.
+              Choose a wallet you want to connect. There are several wallet
+              providers.
             </p>
           </div>
 
           <div class="w-full flex flex-col gap-5 lg:max-w-[330px] lg:w-[330px]">
-            <button class="flex px-[3.125rem] justify-start items-center gap-3 rounded-[1.25rem] border border-purple-550 bg-secondary h-[3.75rem] w-full  md:self-end scale-animation">
-              <svg class="w-[40px] h-[37.082px]" xmlns="http://www.w3.org/2000/svg" width="40" height="38" viewBox="0 0 40 38" fill="none">
-                <path d="M38.0082 0.5625L22.4004 12.1547L25.2867 5.31544L38.0082 0.5625Z" fill="#E2761B" stroke="#E2761B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M1.97656 0.5625L17.4589 12.2645L14.7138 5.31544L1.97656 0.5625Z" fill="#E4761B" stroke="#E4761B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M32.3932 27.4336L28.2363 33.8022L37.1304 36.2493L39.6873 27.5748L32.3932 27.4336Z" fill="#E4761B" stroke="#E4761B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M0.330078 27.5748L2.87125 36.2493L11.7654 33.8022L7.60851 27.4336L0.330078 27.5748Z" fill="#E4761B" stroke="#E4761B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M11.2636 16.6732L8.78516 20.4223L17.6165 20.8144L17.3028 11.3242L11.2636 16.6732Z" fill="#E4761B" stroke="#E4761B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M28.722 16.6717L22.6043 11.2129L22.4004 20.8129L31.2161 20.4207L28.722 16.6717Z" fill="#E4761B" stroke="#E4761B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M11.7656 33.8014L17.0676 31.2132L12.4872 27.6367L11.7656 33.8014Z" fill="#E4761B" stroke="#E4761B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M22.918 31.2132L28.2356 33.8014L27.4984 27.6367L22.918 31.2132Z" fill="#E4761B" stroke="#E4761B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M28.2356 33.8011L22.918 31.2129L23.3415 34.6796L23.2944 36.1384L28.2356 33.8011Z" fill="#D7C1B3" stroke="#D7C1B3" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M11.7656 33.8011L16.7068 36.1384L16.6754 34.6796L17.0676 31.2129L11.7656 33.8011Z" fill="#D7C1B3" stroke="#D7C1B3" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16.7849 25.3466L12.3613 24.0446L15.4829 22.6172L16.7849 25.3466Z" fill="#233447" stroke="#233447" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M23.1992 25.3466L24.5012 22.6172L27.6384 24.0446L23.1992 25.3466Z" fill="#233447" stroke="#233447" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M11.7643 33.8022L12.5172 27.4336L7.60742 27.5748L11.7643 33.8022Z" fill="#CD6116" stroke="#CD6116" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M27.4824 27.4336L28.2354 33.8022L32.3922 27.5748L27.4824 27.4336Z" fill="#CD6116" stroke="#CD6116" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M31.2161 20.4219L22.4004 20.814L23.2161 25.3474L24.518 22.618L27.6553 24.0454L31.2161 20.4219Z" fill="#CD6116" stroke="#CD6116" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12.3597 24.0454L15.4969 22.618L16.7832 25.3474L17.6146 20.814L8.7832 20.4219L12.3597 24.0454Z" fill="#CD6116" stroke="#CD6116" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M8.78516 20.4219L12.4871 27.6376L12.3616 24.0454L8.78516 20.4219Z" fill="#E4751F" stroke="#E4751F" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M27.6549 24.0454L27.498 27.6376L31.2157 20.4219L27.6549 24.0454Z" fill="#E4751F" stroke="#E4751F" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M17.6165 20.8145L16.7852 25.3478L17.8204 30.6968L18.0557 23.6537L17.6165 20.8145Z" fill="#E4751F" stroke="#E4751F" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M22.4001 20.8145L21.9766 23.638L22.1648 30.6968L23.2158 25.3478L22.4001 20.8145Z" fill="#E4751F" stroke="#E4751F" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M23.215 25.3469L22.1641 30.6959L22.917 31.2135L27.4974 27.6371L27.6543 24.0449L23.215 25.3469Z" fill="#F6851B" stroke="#F6851B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12.3613 24.0449L12.4868 27.6371L17.0672 31.2135L17.8202 30.6959L16.7849 25.3469L12.3613 24.0449Z" fill="#F6851B" stroke="#F6851B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M23.295 36.138L23.3421 34.6792L22.9499 34.3341H17.0362L16.6754 34.6792L16.7068 36.138L11.7656 33.8008L13.4911 35.2125L16.9892 37.6439H22.997L26.5107 35.2125L28.2362 33.8008L23.295 36.138Z" fill="#C0AD9E" stroke="#C0AD9E" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M22.917 31.213L22.164 30.6953H17.8189L17.066 31.213L16.6738 34.6796L17.0346 34.3345H22.9483L23.3405 34.6796L22.917 31.213Z" fill="#161616" stroke="#161616" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M38.667 12.9076L40.0003 6.5076L38.0082 0.5625L22.918 11.7625L28.7219 16.6723L36.9258 19.0723L38.7454 16.9547L37.9611 16.39L39.216 15.2449L38.2435 14.4919L39.4984 13.5351L38.667 12.9076Z" fill="#763D16" stroke="#763D16" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M0 6.5076L1.33333 12.9076L0.486275 13.5351L1.74118 14.4919L0.784314 15.2449L2.03922 16.39L1.2549 16.9547L3.05882 19.0723L11.2627 16.6723L17.0667 11.7625L1.97647 0.5625L0 6.5076Z" fill="#763D16" stroke="#763D16" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M36.9255 19.0719L28.7216 16.6719L31.2157 20.4209L27.498 27.6366L32.3922 27.5738H39.6863L36.9255 19.0719Z" fill="#F6851B" stroke="#F6851B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M11.2634 16.6719L3.05949 19.0719L0.330078 27.5738H7.60851L12.4869 27.6366L8.78498 20.4209L11.2634 16.6719Z" fill="#F6851B" stroke="#F6851B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M22.3992 20.8144L22.9168 11.7635L25.3011 5.31641H14.7129L17.0658 11.7635L17.6149 20.8144L17.8031 23.6693L17.8188 30.6968H22.1639L22.1952 23.6693L22.3992 20.8144Z" fill="#F6851B" stroke="#F6851B" stroke-width="0.3125" stroke-linecap="round" stroke-linejoin="round"/>
+            <button
+              class="flex px-[3.125rem] justify-start items-center gap-3 rounded-[1.25rem] border border-purple-550 bg-secondary h-[3.75rem] w-full md:self-end scale-animation"
+            >
+              <svg
+                class="w-[40px] h-[37.082px]"
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="38"
+                viewBox="0 0 40 38"
+                fill="none"
+              >
+                <path
+                  d="M38.0082 0.5625L22.4004 12.1547L25.2867 5.31544L38.0082 0.5625Z"
+                  fill="#E2761B"
+                  stroke="#E2761B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M1.97656 0.5625L17.4589 12.2645L14.7138 5.31544L1.97656 0.5625Z"
+                  fill="#E4761B"
+                  stroke="#E4761B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M32.3932 27.4336L28.2363 33.8022L37.1304 36.2493L39.6873 27.5748L32.3932 27.4336Z"
+                  fill="#E4761B"
+                  stroke="#E4761B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M0.330078 27.5748L2.87125 36.2493L11.7654 33.8022L7.60851 27.4336L0.330078 27.5748Z"
+                  fill="#E4761B"
+                  stroke="#E4761B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.2636 16.6732L8.78516 20.4223L17.6165 20.8144L17.3028 11.3242L11.2636 16.6732Z"
+                  fill="#E4761B"
+                  stroke="#E4761B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M28.722 16.6717L22.6043 11.2129L22.4004 20.8129L31.2161 20.4207L28.722 16.6717Z"
+                  fill="#E4761B"
+                  stroke="#E4761B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.7656 33.8014L17.0676 31.2132L12.4872 27.6367L11.7656 33.8014Z"
+                  fill="#E4761B"
+                  stroke="#E4761B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M22.918 31.2132L28.2356 33.8014L27.4984 27.6367L22.918 31.2132Z"
+                  fill="#E4761B"
+                  stroke="#E4761B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M28.2356 33.8011L22.918 31.2129L23.3415 34.6796L23.2944 36.1384L28.2356 33.8011Z"
+                  fill="#D7C1B3"
+                  stroke="#D7C1B3"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.7656 33.8011L16.7068 36.1384L16.6754 34.6796L17.0676 31.2129L11.7656 33.8011Z"
+                  fill="#D7C1B3"
+                  stroke="#D7C1B3"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16.7849 25.3466L12.3613 24.0446L15.4829 22.6172L16.7849 25.3466Z"
+                  fill="#233447"
+                  stroke="#233447"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M23.1992 25.3466L24.5012 22.6172L27.6384 24.0446L23.1992 25.3466Z"
+                  fill="#233447"
+                  stroke="#233447"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.7643 33.8022L12.5172 27.4336L7.60742 27.5748L11.7643 33.8022Z"
+                  fill="#CD6116"
+                  stroke="#CD6116"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M27.4824 27.4336L28.2354 33.8022L32.3922 27.5748L27.4824 27.4336Z"
+                  fill="#CD6116"
+                  stroke="#CD6116"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M31.2161 20.4219L22.4004 20.814L23.2161 25.3474L24.518 22.618L27.6553 24.0454L31.2161 20.4219Z"
+                  fill="#CD6116"
+                  stroke="#CD6116"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12.3597 24.0454L15.4969 22.618L16.7832 25.3474L17.6146 20.814L8.7832 20.4219L12.3597 24.0454Z"
+                  fill="#CD6116"
+                  stroke="#CD6116"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.78516 20.4219L12.4871 27.6376L12.3616 24.0454L8.78516 20.4219Z"
+                  fill="#E4751F"
+                  stroke="#E4751F"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M27.6549 24.0454L27.498 27.6376L31.2157 20.4219L27.6549 24.0454Z"
+                  fill="#E4751F"
+                  stroke="#E4751F"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.6165 20.8145L16.7852 25.3478L17.8204 30.6968L18.0557 23.6537L17.6165 20.8145Z"
+                  fill="#E4751F"
+                  stroke="#E4751F"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M22.4001 20.8145L21.9766 23.638L22.1648 30.6968L23.2158 25.3478L22.4001 20.8145Z"
+                  fill="#E4751F"
+                  stroke="#E4751F"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M23.215 25.3469L22.1641 30.6959L22.917 31.2135L27.4974 27.6371L27.6543 24.0449L23.215 25.3469Z"
+                  fill="#F6851B"
+                  stroke="#F6851B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12.3613 24.0449L12.4868 27.6371L17.0672 31.2135L17.8202 30.6959L16.7849 25.3469L12.3613 24.0449Z"
+                  fill="#F6851B"
+                  stroke="#F6851B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M23.295 36.138L23.3421 34.6792L22.9499 34.3341H17.0362L16.6754 34.6792L16.7068 36.138L11.7656 33.8008L13.4911 35.2125L16.9892 37.6439H22.997L26.5107 35.2125L28.2362 33.8008L23.295 36.138Z"
+                  fill="#C0AD9E"
+                  stroke="#C0AD9E"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M22.917 31.213L22.164 30.6953H17.8189L17.066 31.213L16.6738 34.6796L17.0346 34.3345H22.9483L23.3405 34.6796L22.917 31.213Z"
+                  fill="#161616"
+                  stroke="#161616"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M38.667 12.9076L40.0003 6.5076L38.0082 0.5625L22.918 11.7625L28.7219 16.6723L36.9258 19.0723L38.7454 16.9547L37.9611 16.39L39.216 15.2449L38.2435 14.4919L39.4984 13.5351L38.667 12.9076Z"
+                  fill="#763D16"
+                  stroke="#763D16"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M0 6.5076L1.33333 12.9076L0.486275 13.5351L1.74118 14.4919L0.784314 15.2449L2.03922 16.39L1.2549 16.9547L3.05882 19.0723L11.2627 16.6723L17.0667 11.7625L1.97647 0.5625L0 6.5076Z"
+                  fill="#763D16"
+                  stroke="#763D16"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M36.9255 19.0719L28.7216 16.6719L31.2157 20.4209L27.498 27.6366L32.3922 27.5738H39.6863L36.9255 19.0719Z"
+                  fill="#F6851B"
+                  stroke="#F6851B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.2634 16.6719L3.05949 19.0719L0.330078 27.5738H7.60851L12.4869 27.6366L8.78498 20.4209L11.2634 16.6719Z"
+                  fill="#F6851B"
+                  stroke="#F6851B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M22.3992 20.8144L22.9168 11.7635L25.3011 5.31641H14.7129L17.0658 11.7635L17.6149 20.8144L17.8031 23.6693L17.8188 30.6968H22.1639L22.1952 23.6693L22.3992 20.8144Z"
+                  fill="#F6851B"
+                  stroke="#F6851B"
+                  stroke-width="0.3125"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
-              <span class="text-center font-work font-base font-semibold leading-140">Metamask</span>
+              <span
+                class="text-center font-work font-base font-semibold leading-140"
+                >Metamask</span
+              >
             </button>
 
-            <button class="flex px-[3.125rem] justify-start items-center gap-3 rounded-[1.25rem] border border-purple-550 bg-secondary h-[3.75rem] w-full  md:self-end scale-animation">
-              <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+            <button
+              class="flex px-[3.125rem] justify-start items-center gap-3 rounded-[1.25rem] border border-purple-550 bg-secondary h-[3.75rem] w-full md:self-end scale-animation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="33"
+                height="32"
+                viewBox="0 0 33 32"
+                fill="none"
+              >
                 <g clip-path="url(#clip0_2580_8099)">
-                <path d="M16.5 32C25.3366 32 32.5 24.8366 32.5 16C32.5 7.16344 25.3366 0 16.5 0C7.66344 0 0.5 7.16344 0.5 16C0.5 24.8366 7.66344 32 16.5 32Z" fill="url(#paint0_radial_2580_8099)"/>
-                <path d="M10.5469 12.3578C13.7656 9.21406 18.9906 9.21406 22.2094 12.3578L22.5969 12.7391C22.7594 12.8953 22.7594 13.1516 22.5969 13.3078L21.2719 14.6016C21.1906 14.6828 21.0594 14.6828 20.9781 14.6016L20.4469 14.0828C18.1969 11.8891 14.5594 11.8891 12.3094 14.0828L11.7406 14.6391C11.6594 14.7203 11.5281 14.7203 11.4469 14.6391L10.1219 13.3453C9.95938 13.1891 9.95938 12.9328 10.1219 12.7766L10.5469 12.3578ZM24.9531 15.0328L26.1344 16.1828C26.2969 16.3391 26.2969 16.5953 26.1344 16.7516L20.8156 21.9453C20.6531 22.1016 20.3906 22.1016 20.2344 21.9453L16.4594 18.2578C16.4219 18.2203 16.3531 18.2203 16.3156 18.2578L12.5406 21.9453C12.3781 22.1016 12.1156 22.1016 11.9594 21.9453L6.62187 16.7516C6.45938 16.5953 6.45938 16.3391 6.62187 16.1828L7.80312 15.0328C7.96562 14.8766 8.22813 14.8766 8.38438 15.0328L12.1594 18.7203C12.1969 18.7578 12.2656 18.7578 12.3031 18.7203L16.0781 15.0328C16.2406 14.8766 16.5031 14.8766 16.6594 15.0328L20.4344 18.7203C20.4719 18.7578 20.5406 18.7578 20.5781 18.7203L24.3531 15.0328C24.5281 14.8766 24.7906 14.8766 24.9531 15.0328Z" fill="white"/>
+                  <path
+                    d="M16.5 32C25.3366 32 32.5 24.8366 32.5 16C32.5 7.16344 25.3366 0 16.5 0C7.66344 0 0.5 7.16344 0.5 16C0.5 24.8366 7.66344 32 16.5 32Z"
+                    fill="url(#paint0_radial_2580_8099)"
+                  />
+                  <path
+                    d="M10.5469 12.3578C13.7656 9.21406 18.9906 9.21406 22.2094 12.3578L22.5969 12.7391C22.7594 12.8953 22.7594 13.1516 22.5969 13.3078L21.2719 14.6016C21.1906 14.6828 21.0594 14.6828 20.9781 14.6016L20.4469 14.0828C18.1969 11.8891 14.5594 11.8891 12.3094 14.0828L11.7406 14.6391C11.6594 14.7203 11.5281 14.7203 11.4469 14.6391L10.1219 13.3453C9.95938 13.1891 9.95938 12.9328 10.1219 12.7766L10.5469 12.3578ZM24.9531 15.0328L26.1344 16.1828C26.2969 16.3391 26.2969 16.5953 26.1344 16.7516L20.8156 21.9453C20.6531 22.1016 20.3906 22.1016 20.2344 21.9453L16.4594 18.2578C16.4219 18.2203 16.3531 18.2203 16.3156 18.2578L12.5406 21.9453C12.3781 22.1016 12.1156 22.1016 11.9594 21.9453L6.62187 16.7516C6.45938 16.5953 6.45938 16.3391 6.62187 16.1828L7.80312 15.0328C7.96562 14.8766 8.22813 14.8766 8.38438 15.0328L12.1594 18.7203C12.1969 18.7578 12.2656 18.7578 12.3031 18.7203L16.0781 15.0328C16.2406 14.8766 16.5031 14.8766 16.6594 15.0328L20.4344 18.7203C20.4719 18.7578 20.5406 18.7578 20.5781 18.7203L24.3531 15.0328C24.5281 14.8766 24.7906 14.8766 24.9531 15.0328Z"
+                    fill="white"
+                  />
                 </g>
                 <defs>
-                <radialGradient id="paint0_radial_2580_8099" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500099 16.0005) scale(32)">
-                <stop stop-color="#5D9DF6"/>
-                <stop offset="1" stop-color="#006FFF"/>
-                </radialGradient>
-                <clipPath id="clip0_2580_8099">
-                <rect width="32" height="32" fill="white" transform="translate(0.5)"/>
-                </clipPath>
+                  <radialGradient
+                    id="paint0_radial_2580_8099"
+                    cx="0"
+                    cy="0"
+                    r="1"
+                    gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(0.500099 16.0005) scale(32)"
+                  >
+                    <stop stop-color="#5D9DF6" />
+                    <stop offset="1" stop-color="#006FFF" />
+                  </radialGradient>
+                  <clipPath id="clip0_2580_8099">
+                    <rect
+                      width="32"
+                      height="32"
+                      fill="white"
+                      transform="translate(0.5)"
+                    />
+                  </clipPath>
                 </defs>
               </svg>
-              <span class="text-center font-work font-base font-semibold leading-140">Wallet Connect</span>
+              <span
+                class="text-center font-work font-base font-semibold leading-140"
+                >Wallet Connect</span
+              >
             </button>
-            <button class="flex px-[3.125rem] justify-start items-center gap-3 rounded-[1.25rem] border border-purple-550 bg-secondary h-[3.75rem] w-full  md:self-end scale-animation">
-              <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+            <button
+              class="flex px-[3.125rem] justify-start items-center gap-3 rounded-[1.25rem] border border-purple-550 bg-secondary h-[3.75rem] w-full md:self-end scale-animation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="33"
+                height="32"
+                viewBox="0 0 33 32"
+                fill="none"
+              >
                 <g clip-path="url(#clip0_2580_8105)">
-                <path d="M16.5 32C25.3366 32 32.5 24.8366 32.5 16C32.5 7.16344 25.3366 0 16.5 0C7.66344 0 0.5 7.16344 0.5 16C0.5 24.8366 7.66344 32 16.5 32Z" fill="#0052FF"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 16C5.25 22.2132 10.2868 27.25 16.5 27.25C22.7132 27.25 27.75 22.2132 27.75 16C27.75 9.78678 22.7132 4.75 16.5 4.75C10.2868 4.75 5.25 9.78678 5.25 16ZM13.625 12.375C13.2108 12.375 12.875 12.7108 12.875 13.125V18.875C12.875 19.2892 13.2108 19.625 13.625 19.625H19.375C19.7892 19.625 20.125 19.2892 20.125 18.875V13.125C20.125 12.7108 19.7892 12.375 19.375 12.375H13.625Z" fill="white"/>
+                  <path
+                    d="M16.5 32C25.3366 32 32.5 24.8366 32.5 16C32.5 7.16344 25.3366 0 16.5 0C7.66344 0 0.5 7.16344 0.5 16C0.5 24.8366 7.66344 32 16.5 32Z"
+                    fill="#0052FF"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M5.25 16C5.25 22.2132 10.2868 27.25 16.5 27.25C22.7132 27.25 27.75 22.2132 27.75 16C27.75 9.78678 22.7132 4.75 16.5 4.75C10.2868 4.75 5.25 9.78678 5.25 16ZM13.625 12.375C13.2108 12.375 12.875 12.7108 12.875 13.125V18.875C12.875 19.2892 13.2108 19.625 13.625 19.625H19.375C19.7892 19.625 20.125 19.2892 20.125 18.875V13.125C20.125 12.7108 19.7892 12.375 19.375 12.375H13.625Z"
+                    fill="white"
+                  />
                 </g>
                 <defs>
-                <clipPath id="clip0_2580_8105">
-                <rect width="32" height="32" fill="white" transform="translate(0.5)"/>
-                </clipPath>
+                  <clipPath id="clip0_2580_8105">
+                    <rect
+                      width="32"
+                      height="32"
+                      fill="white"
+                      transform="translate(0.5)"
+                    />
+                  </clipPath>
                 </defs>
               </svg>
-              <span class="text-center font-work font-base font-semibold leading-140">Coinbase</span>
+              <span
+                class="text-center font-work font-base font-semibold leading-140"
+                >Coinbase</span
+              >
             </button>
           </div>
         </div>
       </section>
       <!-- ============== END HEAD ==========-->
-
-
-
-
-
     </main>
 
     <!-- ============ FOOTER ================= -->
-    <footer id="footer" class="w-full h-full bg-secondary text-white py-10 pt-[80px] flex flex-col items-center justify-center gap-[49px] border-t-2 border-solid border-zinc-800 lg:gap-[30px] md:py-20 lg:px-[195px] lg:py-10 lg:pt-[80px]">
-      <div class="flex flex-col items-center gap-[30px] lg:grid lg:grid-cols-[327.414px_240px_420px] lg:items-start lg:gap-0 w-[315px] md:w-[690px]   lg:w-[1050px] lg:min-w-[1050px]" >
-
-        <div class="flex flex-col items-start gap-5 w-full lg:gap-[30px] lg:w-[327.414px]">
-          <a href="/" aria-label="home page" class="w-[243.414px] h-[32px] flex justify-center items-center gap-2.5">
-            <img alt="" src="./img/logo_img.svg" class="w-[32px] h-[32px]">
-            <img alt="" src="./img/logo_txt.svg" class="w-full h-[21px]">
+    <footer
+      id="footer"
+      class="w-full h-full bg-secondary text-white py-10 pt-[80px] flex flex-col items-center justify-center gap-[49px] border-t-2 border-solid border-zinc-800 lg:gap-[30px] md:py-20 lg:px-[195px] lg:py-10 lg:pt-[80px]"
+    >
+      <div
+        class="flex flex-col items-center gap-[30px] lg:grid lg:grid-cols-[327.414px_240px_420px] lg:items-start lg:gap-0 w-[315px] md:w-[690px] lg:w-[1050px] lg:min-w-[1050px]"
+      >
+        <div
+          class="flex flex-col items-start gap-5 w-full lg:gap-[30px] lg:w-[327.414px]"
+        >
+          <a
+            href="/"
+            aria-label="home page"
+            class="w-[243.414px] h-[32px] flex justify-center items-center gap-2.5"
+          >
+            <img alt="" src="./img/logo_img.svg" class="w-[32px] h-[32px]" />
+            <img alt="" src="./img/logo_txt.svg" class="w-full h-[21px]" />
           </a>
 
           <div class="flex flex-col items-start gap-5">
-            <p class="font-work text-base font-normal leading-140 text-stone-300">
+            <p
+              class="font-work text-base font-normal leading-140 text-stone-300"
+            >
               NFT marketplace UI created with Anima for Figma.
             </p>
 
             <div class="flex flex-col items-start gap-[15px]">
-
-              <p class="font-work text-base font-normal leading-140 text-stone-300">
+              <p
+                class="font-work text-base font-normal leading-140 text-stone-300"
+              >
                 Join our communaty
               </p>
               <div class="flex items-start gap-2.5">
-                <a href="https://discord.com" aria-label="discor" target="_blank">
-                  <img alt="" src="./img/discord-icon.svg" class="w-[32px] h-[32px]">
+                <a
+                  href="https://discord.com"
+                  aria-label="discor"
+                  target="_blank"
+                >
+                  <img
+                    alt=""
+                    src="./img/discord-icon.svg"
+                    class="w-[32px] h-[32px]"
+                  />
                 </a>
 
-                <a href="https://youtube.com" aria-label="youtube" target="_blank">
-                  <img alt="" src="./img/youtube-icon.svg" class="w-[32px] h-[32px]">
+                <a
+                  href="https://youtube.com"
+                  aria-label="youtube"
+                  target="_blank"
+                >
+                  <img
+                    alt=""
+                    src="./img/youtube-icon.svg"
+                    class="w-[32px] h-[32px]"
+                  />
                 </a>
 
-                <a href="https://twitter.com" aria-label="twitter" target="_blank">
-                  <img alt="" src="./img/twitter-icon.svg" class="w-[32px] h-[32px]">
+                <a
+                  href="https://twitter.com"
+                  aria-label="twitter"
+                  target="_blank"
+                >
+                  <img
+                    alt=""
+                    src="./img/twitter-icon.svg"
+                    class="w-[32px] h-[32px]"
+                  />
                 </a>
 
-                <a href="https://instagram.com" aria-label="instagram" target="_blank">
-                  <img alt="" src="./img/instagram-icon.svg" class="w-[32px] h-[32px]">
+                <a
+                  href="https://instagram.com"
+                  aria-label="instagram"
+                  target="_blank"
+                >
+                  <img
+                    alt=""
+                    src="./img/instagram-icon.svg"
+                    class="w-[32px] h-[32px]"
+                  />
                 </a>
-
               </div>
             </div>
           </div>
         </div>
 
-
-        <div class="flex flex-col items-start gap-5 w-full lg:gap-[25px] lg:w-[240px] lg:pl-[84px]">
+        <div
+          class="flex flex-col items-start gap-5 w-full lg:gap-[25px] lg:w-[240px] lg:pl-[84px]"
+        >
           <h3 class="font-space text-[22px] font-bold leading-160 capitalize">
             Explore
           </h3>
 
           <div class="flex flex-col items-start gap-5">
-            <a href="marketplace.html" class="font-work text-base font-normal leading-140 text-stone-300">
+            <a
+              href="marketplace.html"
+              class="font-work text-base font-normal leading-140 text-stone-300"
+            >
               Marketplace
             </a>
 
-            <a href="rankings.html" class="font-work text-base font-normal leading-140 text-stone-300">
+            <a
+              href="rankings.html"
+              class="font-work text-base font-normal leading-140 text-stone-300"
+            >
               Rankings
             </a>
 
-            <a href="wallet.html" class="font-work text-base font-normal leading-140 text-stone-300">
+            <a
+              href="wallet.html"
+              class="font-work text-base font-normal leading-140 text-stone-300"
+            >
               Connect a wallet
             </a>
-
           </div>
         </div>
 
-        <div class="flex flex-col items-start gap-5 w-full lg:gap-[25px] lg:ml-10">
+        <div
+          class="flex flex-col items-start gap-5 w-full lg:gap-[25px] lg:ml-10"
+        >
           <h3 class="font-space text-[22px] font-bold leading-160 capitalize">
             Join our weekly digest
           </h3>
 
           <div class="flex flex-col items-start gap-5">
-            <p class="font-work text-base font-normal leading-140 text-stone-300">
+            <p
+              class="font-work text-base font-normal leading-140 text-stone-300"
+            >
               Get exclusive promotions & updates straight to your inbox.
             </p>
 
             <div class="w-full flex flex-col items-center gap-4 lg:relative">
-              <input placeholder="Enter your email here" type="email" aria-label="newslatter email" class="flex h-[46px] w-full px-5 py-4 items-center gap-3 rounded-20 border border-solid border-zinc-350
-              font-work text-base font-normal leading-140 text-black
-              placeholder:text-zinc-800
-              focus:outline-none
-              md:h-[60px]
-              ">
-              <button class="flex px-[3.125rem] justify-center items-center gap-3 rounded-[1.25rem] border-2 border-purple-550 bg-purple-550 h-[2.875rem] w-full  md:self-end md:h-[60px] md:py-0 md:px-[50px] md:justify-end md:items-center md:absolute md:w-fit scale-animation">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1.875 4.375C1.875 4.02982 2.15482 3.75 2.5 3.75H17.5C17.8452 3.75 18.125 4.02982 18.125 4.375V15C18.125 15.3315 17.9933 15.6495 17.7589 15.8839C17.5245 16.1183 17.2065 16.25 16.875 16.25H3.125C2.79348 16.25 2.47554 16.1183 2.24112 15.8839C2.0067 15.6495 1.875 15.3315 1.875 15V4.375ZM3.125 5V15H16.875V5H3.125Z" fill="white"></path>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.03928 3.95268C2.27253 3.69823 2.66788 3.68104 2.92233 3.91428L10 10.4021L17.0777 3.91428C17.3321 3.68104 17.7275 3.69823 17.9607 3.95268C18.194 4.20713 18.1768 4.60248 17.9223 4.83573L10.4223 11.7107C10.1834 11.9298 9.81663 11.9298 9.57768 11.7107L2.07768 4.83573C1.82323 4.60248 1.80604 4.20713 2.03928 3.95268Z" fill="white"></path>
+              <input
+                placeholder="Enter your email here"
+                type="email"
+                aria-label="newslatter email"
+                class="flex h-[46px] w-full px-5 py-4 items-center gap-3 rounded-20 border border-solid border-zinc-350 font-work text-base font-normal leading-140 text-black placeholder:text-zinc-800 focus:outline-none md:h-[60px]"
+              />
+              <button
+                class="flex px-[3.125rem] justify-center items-center gap-3 rounded-[1.25rem] border-2 border-purple-550 bg-purple-550 h-[2.875rem] w-full md:self-end md:h-[60px] md:py-0 md:px-[50px] md:justify-end md:items-center md:absolute md:w-fit scale-animation"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.875 4.375C1.875 4.02982 2.15482 3.75 2.5 3.75H17.5C17.8452 3.75 18.125 4.02982 18.125 4.375V15C18.125 15.3315 17.9933 15.6495 17.7589 15.8839C17.5245 16.1183 17.2065 16.25 16.875 16.25H3.125C2.79348 16.25 2.47554 16.1183 2.24112 15.8839C2.0067 15.6495 1.875 15.3315 1.875 15V4.375ZM3.125 5V15H16.875V5H3.125Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.03928 3.95268C2.27253 3.69823 2.66788 3.68104 2.92233 3.91428L10 10.4021L17.0777 3.91428C17.3321 3.68104 17.7275 3.69823 17.9607 3.95268C18.194 4.20713 18.1768 4.60248 17.9223 4.83573L10.4223 11.7107C10.1834 11.9298 9.81663 11.9298 9.57768 11.7107L2.07768 4.83573C1.82323 4.60248 1.80604 4.20713 2.03928 3.95268Z"
+                    fill="white"
+                  ></path>
                 </svg>
-                <span class="text-center font-work font-base font-semibold leading-140">Subscribe</span>
+                <span
+                  class="text-center font-work font-base font-semibold leading-140"
+                  >Subscribe</span
+                >
               </button>
-
             </div>
           </div>
         </div>
-
-
       </div>
 
-      <div class="flex flex-col items-start gap-5 w-[315px] md:w-[690px]   lg:w-[1050px] lg:min-w-[1050px]">
-        <hr class="w-full h-px bg-zinc-350 border-0">
-        <span class="font-work text-xs text-stone-300 font-normal leading-[110%]">
+      <div
+        class="flex flex-col items-start gap-5 w-[315px] md:w-[690px] lg:w-[1050px] lg:min-w-[1050px]"
+      >
+        <hr class="w-full h-px bg-zinc-350 border-0" />
+        <span
+          class="font-work text-xs text-stone-300 font-normal leading-[110%]"
+        >
           &copy; NFT Market. Use this template freely.
         </span>
       </div>
@@ -288,7 +687,5 @@
 
     <!-- ============== SCRIPTS ============== -->
     <script src="./js/main.js"></script>
-
   </body>
-
 </html>
