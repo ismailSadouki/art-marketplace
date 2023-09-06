@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- =========== ==============-->
+    <meta name="description" content="ART marketplace">
+    <meta name="keywords" content="art, music , images">
+    <meta name="author" content="John Doe">
+
+  </head>
+  <body>
+
+
+    <!-- ============= HEADER ========== -->
+    <header class="bg-zinc-800 ">
+      <nav class="flex py-5 my-0 mx-auto px-3 md:px-[50px] justify-between items-center max-w-[1366px] relative">
+        <a href="/" aria-label="home page" class="w-[243.414px] h-[32px] flex justify-center items-center gap-2.5 shrink-0">
+          <img alt="" src="./img/logo_img.svg" class="w-[32px] h-[32px]">
+          <img alt="" src="./img/logo_txt.svg" class="w-full h-[21px]">
+        </a>
+
+        <div
+          id="open-nav"
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+          onclick="toggleNav(event, 'show')"
+          onKeyDown="toggleNav(event, 'show') "
+          class="  flex lg:hidden flex-col gap-1.5 justify-center items-start w-6 h-6 transition-all duration-300">
+          <span class="w-9/12 h-0.5 bg-white rounded-20"></span>
+          <span class="w-full h-0.5 bg-white rounded-20"></span>
+          <span class="w-9/12 h-0.5 bg-white rounded-20"></span>
+        </div>
+
+        <div
+          id="close-nav"
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+          onclick="toggleNav(event, 'close')"
+          onKeyDown="toggleNav(event, 'close') "
+          class="hidden lg:hidden flex-col gap-1.5 justify-center relative items-start w-6 h-6 transition-all duration-300">
+          <span class="w-full h-0.5 bg-white rounded-20 absolute rotate-45"></span>
+          <span class="w-full h-0.5 bg-white rounded-20 absolute -rotate-45"></span>
+        </div>
+        <ul id="nav-menu" class="absolute bg-neutral-900 items-start justify-start flex-col top-[62px] left-[-200vh] md:pl-[45px] h-[217px]
+        transition-all duration-300
+        flex lg:justify-end lg:items-center lg:gap-2.5 lg:bg-transparent lg:static lg:flex-row lg:h-auto lg:pl-0">
+          <li class="flex h-[46px] w-screen lg:w-auto py-0 px-5 justify-start lg:justify-center gap-3 rounded-20 items-center">
+            <a href="marketplace.html" class="text-center text-base font-work font-semibold leading-140 text-white">
+              Marketplace
+            </a>
+          </li>
+
+          <li class="flex h-[46px] py-0 px-5 justify-center gap-3 rounded-20 items-center">
+            <a href="rankings.html" class="text-center text-base font-work font-semibold leading-140 text-white">
+              Rankings
+            </a>
+          </li>
+          <li class="flex h-[46px] py-0 px-5 justify-center gap-3 rounded-20 items-center">
+            <a href="wallet.html" class="text-center text-base font-work font-semibold leading-140 text-white">
+              Connect a wallet
+            </a>
+          </li>
+          <li class="flex h-[46px] mt-2.5 lg:py-0 px-5 justify-center gap-3 rounded-20 items-center">
+            <a href="login.html" class="flex px-[30px] justify-center items-center gap-3 rounded-20 bg-purple-550 h-[60px] w-full scale-animation">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 3.125C7.58375 3.125 5.625 5.08375 5.625 7.5C5.625 9.91625 7.58375 11.875 10 11.875C12.4162 11.875 14.375 9.91625 14.375 7.5C14.375 5.08375 12.4162 3.125 10 3.125ZM4.375 7.5C4.375 4.3934 6.8934 1.875 10 1.875C13.1066 1.875 15.625 4.3934 15.625 7.5C15.625 10.6066 13.1066 13.125 10 13.125C6.8934 13.125 4.375 10.6066 4.375 7.5Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0001 13.124C8.57374 13.124 7.17251 13.4995 5.93728 14.2128C4.70205 14.926 3.67634 15.9518 2.96327 17.1872C2.79071 17.4861 2.40848 17.5886 2.10953 17.416C1.81058 17.2435 1.70812 16.8612 1.88068 16.5623C2.70345 15.1369 3.88696 13.9532 5.31223 13.1303C6.7375 12.3073 8.3543 11.874 10.0001 11.874C11.6459 11.874 13.2627 12.3073 14.688 13.1303C16.1132 13.9532 17.2968 15.1369 18.1195 16.5623C18.2921 16.8612 18.1896 17.2435 17.8907 17.416C17.5917 17.5886 17.2095 17.4861 17.0369 17.1872C16.3239 15.9518 15.2982 14.926 14.0629 14.2128C12.8277 13.4995 11.4265 13.124 10.0001 13.124Z" fill="white"/>
+              </svg>
+              <span class="text-center font-work font-base font-semibold leading-140 text-white">Sign Up</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--================== MAIN================ -->
+    <main class="w-full h-full bg-zinc-800 text-white overflow-hidden">
+
+
+      <!-- ============ HEAD ================= -->
+      <section id="top" class="flex justify-center flex-col items-center  md:gap-10 md:grid md:grid-cols-2 ">
+        <div class="flex flex-col items-center min-w-full min-h-full md:h-full">
+          <img
+            alt="bg"
+            src="./img/login_bg.webp"
+            class="h-[250px] md:h-full w-full object-cover"
+            >
+        </div>
+
+        <div class="flex flex-col items-start gap-[30px] w-[315px] pt-[30px] pb-[40px] md:py-[80px] lg:py-[100px] md:w-[325px] lg:w-[460px] " >
+          <div class="w-full flex flex-col gap-5 ">
+            <h2 class="font-work text-h1 font-semibold leading-140 capitalize lg:text-[51px]">Create account</h2>
+            <p class="font-work font-normal text-base leading-140 lg:text-h2">
+              Welcome! enter your details and start creating, collecting and selling NFTs.
+            </p>
+          </div>
+
+          <div class="w-full flex flex-col gap-[15px] lg:max-w-[330px] lg:w-[330px]">
+            <div class="relative w-full">
+              <img alt="" src="./img/user-icon.svg" class="h-5 w-5 absolute top-3.5 left-[22px]">
+              <input
+                type="text"
+                aria-label="Enter your username"
+                placeholder="Username"
+                name="username"
+                class="font-work text-base leading-140 font-normal  text-black placeholder:text-zinc-800 h-[46px] pr-5 pl-14 py-4 rounded-20 border border-solid border-zinc-350 w-full"
+                >
+            </div>
+            <div class="relative w-full">
+              <img alt="" src="./img/email-icon.svg" class="h-5 w-5 absolute top-3.5 left-[22px]">
+              <input
+                type="email"
+                aria-label="Enter your email"
+                placeholder="Email Address"
+                name="email"
+                class="font-work text-base leading-140 font-normal  text-black placeholder:text-zinc-800 h-[46px] pr-5 pl-14 py-4 rounded-20 border border-solid border-zinc-350 w-full"
+                >
+            </div>
+            <div class="relative w-full">
+              <img alt="" src="./img/password-icon.svg" class="h-5 w-5 absolute top-3.5 left-[22px]">
+              <input
+                type="password"
+                aria-label="Enter your password"
+                placeholder="Passowrd"
+                name="password"
+                class="font-work text-base leading-140 font-normal  text-black placeholder:text-zinc-800 h-[46px] pr-5 pl-14 py-4 rounded-20 border border-solid border-zinc-350 w-full"
+                >
+            </div>
+            <div class="relative w-full">
+              <img alt="" src="./img/password-icon.svg" class="h-5 w-5 absolute top-3.5 left-[22px]">
+              <input
+                type="password"
+                aria-label="Confirm your password"
+                placeholder="Confirm Passowrd"
+                name="confirm_password"
+                class="font-work text-base leading-140 font-normal  text-black placeholder:text-zinc-800 h-[46px] pr-5 pl-14 py-4 rounded-20 border border-solid border-zinc-350 w-full"
+                >
+            </div>
+            <div class="w-full">
+              <button class="flex px-[3.125rem] justify-center items-center gap-3 rounded-[1.25rem] bg-purple-550 h-[3.75rem] w-full mt-[15px] scale-animation">
+            <span class="text-center font-work font-base font-semibold leading-140">Create account</span>
+          </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============== END HEAD ==========-->
+
+
+
+
+
+    </main>
+
+    <!-- ============ FOOTER ================= -->
+    <footer id="footer" class="w-full h-full bg-secondary text-white py-10 pt-[80px] flex flex-col items-center justify-center gap-[49px] border-t-2 border-solid border-zinc-800 lg:gap-[30px] md:py-20 lg:px-[195px] lg:py-10 lg:pt-[80px]">
+      <div class="flex flex-col items-center gap-[30px] lg:grid lg:grid-cols-[327.414px_240px_420px] lg:items-start lg:gap-0 w-[315px] md:w-[690px]   lg:w-[1050px] lg:min-w-[1050px]" >
+
+        <div class="flex flex-col items-start gap-5 w-full lg:gap-[30px] lg:w-[327.414px]">
+          <a href="/" aria-label="home page" class="w-[243.414px] h-[32px] flex justify-center items-center gap-2.5">
+            <img alt="" src="./img/logo_img.svg" class="w-[32px] h-[32px]">
+            <img alt="" src="./img/logo_txt.svg" class="w-full h-[21px]">
+          </a>
+
+          <div class="flex flex-col items-start gap-5">
+            <p class="font-work text-base font-normal leading-140 text-stone-300">
+              NFT marketplace UI created with Anima for Figma.
+            </p>
+
+            <div class="flex flex-col items-start gap-[15px]">
+
+              <p class="font-work text-base font-normal leading-140 text-stone-300">
+                Join our communaty
+              </p>
+              <div class="flex items-start gap-2.5">
+                <a href="https://discord.com" aria-label="discor" target="_blank">
+                  <img alt="" src="./img/discord-icon.svg" class="w-[32px] h-[32px]">
+                </a>
+
+                <a href="https://youtube.com" aria-label="youtube" target="_blank">
+                  <img alt="" src="./img/youtube-icon.svg" class="w-[32px] h-[32px]">
+                </a>
+
+                <a href="https://twitter.com" aria-label="twitter" target="_blank">
+                  <img alt="" src="./img/twitter-icon.svg" class="w-[32px] h-[32px]">
+                </a>
+
+                <a href="https://instagram.com" aria-label="instagram" target="_blank">
+                  <img alt="" src="./img/instagram-icon.svg" class="w-[32px] h-[32px]">
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="flex flex-col items-start gap-5 w-full lg:gap-[25px] lg:w-[240px] lg:pl-[84px]">
+          <h3 class="font-space text-[22px] font-bold leading-160 capitalize">
+            Explore
+          </h3>
+
+          <div class="flex flex-col items-start gap-5">
+            <a href="marketplace.html" class="font-work text-base font-normal leading-140 text-stone-300">
+              Marketplace
+            </a>
+
+            <a href="rankings.html" class="font-work text-base font-normal leading-140 text-stone-300">
+              Rankings
+            </a>
+
+            <a href="wallet.html" class="font-work text-base font-normal leading-140 text-stone-300">
+              Connect a wallet
+            </a>
+
+          </div>
+        </div>
+
+        <div class="flex flex-col items-start gap-5 w-full lg:gap-[25px] lg:ml-10">
+          <h3 class="font-space text-[22px] font-bold leading-160 capitalize">
+            Join our weekly digest
+          </h3>
+
+          <div class="flex flex-col items-start gap-5">
+            <p class="font-work text-base font-normal leading-140 text-stone-300">
+              Get exclusive promotions & updates straight to your inbox.
+            </p>
+
+            <div class="w-full flex flex-col items-center gap-4 lg:relative">
+              <input placeholder="Enter your email here" type="email" aria-label="newslatter email" class="flex h-[46px] w-full px-5 py-4 items-center gap-3 rounded-20 border border-solid border-zinc-350
+              font-work text-base font-normal leading-140 text-black
+              placeholder:text-zinc-800
+              focus:outline-none
+              md:h-[60px]
+              ">
+              <button class="flex px-[3.125rem] justify-center items-center gap-3 rounded-[1.25rem] border-2 border-purple-550 bg-purple-550 h-[2.875rem] w-full  md:self-end md:h-[60px] md:py-0 md:px-[50px] md:justify-end md:items-center md:absolute md:w-fit scale-animation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1.875 4.375C1.875 4.02982 2.15482 3.75 2.5 3.75H17.5C17.8452 3.75 18.125 4.02982 18.125 4.375V15C18.125 15.3315 17.9933 15.6495 17.7589 15.8839C17.5245 16.1183 17.2065 16.25 16.875 16.25H3.125C2.79348 16.25 2.47554 16.1183 2.24112 15.8839C2.0067 15.6495 1.875 15.3315 1.875 15V4.375ZM3.125 5V15H16.875V5H3.125Z" fill="white"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.03928 3.95268C2.27253 3.69823 2.66788 3.68104 2.92233 3.91428L10 10.4021L17.0777 3.91428C17.3321 3.68104 17.7275 3.69823 17.9607 3.95268C18.194 4.20713 18.1768 4.60248 17.9223 4.83573L10.4223 11.7107C10.1834 11.9298 9.81663 11.9298 9.57768 11.7107L2.07768 4.83573C1.82323 4.60248 1.80604 4.20713 2.03928 3.95268Z" fill="white"></path>
+                </svg>
+                <span class="text-center font-work font-base font-semibold leading-140">Subscribe</span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="flex flex-col items-start gap-5 w-[315px] md:w-[690px]   lg:w-[1050px] lg:min-w-[1050px]">
+        <hr class="w-full h-px bg-zinc-350 border-0">
+        <span class="font-work text-xs text-stone-300 font-normal leading-[110%]">
+          &copy; NFT Market. Use this template freely.
+        </span>
+      </div>
+    </footer>
+    <!-- ============== END FOOTER ==========-->
+
+    <!-- ============== SCRIPTS ============== -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
