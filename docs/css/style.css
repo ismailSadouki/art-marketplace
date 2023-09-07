@@ -1742,6 +1742,14 @@ video {
     margin-top: 0px;
   }
 
+  .lg\:-mt-2{
+    margin-top: -0.5rem;
+  }
+
+  .lg\:-mt-2\.5{
+    margin-top: -0.625rem;
+  }
+
   .lg\:block{
     display: block;
   }
@@ -1808,6 +1816,10 @@ video {
 
   .lg\:h-auto{
     height: auto;
+  }
+
+  .lg\:h-\[55px\]{
+    height: 55px;
   }
 
   .lg\:min-h-\[30px\]{
